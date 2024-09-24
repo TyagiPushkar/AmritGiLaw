@@ -15,7 +15,7 @@ const Addmission = () => {
   const buttonStyle = {
     display: 'inline-flex',
     padding: '14px 25px',
-    backgroundColor: '#0056b3', // Adjust as needed
+    backgroundColor: '#a65320', // Adjust as needed
     color: '#fff',
     border: '0',
     outline:"0",

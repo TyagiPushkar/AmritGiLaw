@@ -7,54 +7,34 @@
 
 .carousel {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Space around images for gallery view */
     align-items: center;
     overflow: hidden;
     border-radius: 10px;
-    /* Optional: Add border radius */
 }
 
 .carousel-images {
-    flex: 1;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
+    /* Spacing between images */
     cursor: pointer;
-    /* Pointer cursor for clickable images */
 }
 
-.carousel-images img {
-    width: 300px;
-    /* Fixed width */
-    height: 200px;
-    /* Fixed height */
+.carousel-item {
+    width: 250px;
+    height: 180px;
     object-fit: cover;
-    /* Cover image */
     border-radius: 10px;
-    /* Optional: Add border radius */
     transition: transform 0.3s ease-in-out;
 }
 
-.next-btn,
-.back-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    /* Adjust button size */
-    height: 40px;
-    /* Adjust button size */
-}
-
-.next-btn {
-    right: 10px;
-    /* Adjust positioning */
-}
-
-.back-btn {
-    left: 10px;
-    /* Adjust positioning */
+.carousel-item:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
 }
 
 /* Modal styles */
@@ -76,8 +56,8 @@
 }
 
 .modal-content img {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 60%;
+    max-height: 60%;
 }
 
 .close {
@@ -87,4 +67,26 @@
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+.prev-button,
+.next-button {
+    background-color: #a65320;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* z-index: 100; */
+    border-radius: 50%;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
 }

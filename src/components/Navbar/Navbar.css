@@ -86,9 +86,9 @@ ul.dropdown li a {
     display: block;
 }
 
-ul.dropdown li a:hover {
+/* ul.dropdown li a:hover {
     background-color: #f1f1f1;
-}
+} */
 
 /* Show dropdown with animation when hovering over the parent list item */
 li:hover>ul.dropdown {
@@ -119,12 +119,12 @@ li:hover>ul.dropdown {
         top: 0;
         right: 0;
         bottom: 0;
-        background: #3a48c4;
+        background: #a65320;
         z-index: 1000;
         /* Ensure it's above other elements */
         width: 250px;
         /* Adjust width as needed */
-        padding-top: 70px;
+        padding-top: 50px;
         /* Space for the logo or header */
         transition: transform 0.5s ease;
         /* Smooth transition for the menu */
@@ -159,6 +159,7 @@ li:hover>ul.dropdown {
 
     .mobile-menu .dropdown {
         display: block;
+        background-color: #a65320;
         /* Make dropdown visible */
         padding-left: 20px;
         /* Indent for dropdown items */

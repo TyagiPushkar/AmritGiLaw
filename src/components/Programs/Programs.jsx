@@ -93,13 +93,13 @@ const collegeLabels = {
                             label={collegeLabels[college]}
                             value={college}
                             sx={{
-                                color: 'white',
+                                color: '#a65320',
                                 fontWeight: 'bold',
                                 textTransform: 'none',
                                 borderRadius: '10px',
                                 padding: '10px 24px',
                                 margin: '0 16px',
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
                                 transition: 'background-color 0.3s, transform 0.3s',
                                 '&:hover': {
                                     backgroundColor: 'rgba(255, 255, 255, 0.3)',
