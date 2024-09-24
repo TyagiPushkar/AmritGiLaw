@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Tabs, Tab, Grid } from '@mui/material';
+import { Box, Tabs, Tab, Grid,Select, MenuItem,useMediaQuery } from '@mui/material';
 import CardFlip from './CardFlip'; // Import the CardFlip component
 import image from "../../assets/law.png";
 import bballb from "../../assets/bballb.png";
@@ -11,10 +11,15 @@ import bsccs from "../../assets/BScComputerScience.png";
 import bschs from "../../assets/bschs.png";
 
 const Programs = () => {
-    const [activeTab, setActiveTab] = useState('college1');
+     const [activeTab, setActiveTab] = useState('college1');
+    const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen size
 
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
+    };
+
+    const handleSelectChange = (event) => {
+        setActiveTab(event.target.value);
     };
 
     const collegeCourses = {
@@ -37,60 +42,81 @@ const Programs = () => {
             { degree: "M.A. In Yoga", duration: "4 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: bballb }
         ]
     };
-
+const collegeLabels = {
+        college1: 'Amrit Law College',
+        college2: 'Roorkee Degree College',
+        college3: 'Amrit College of Education'
+    };
     return (
-        <Box sx={{ width: '100%', padding: 2 }}>
-            {/* Tabs for college selection */}
-            <Tabs
-                value={activeTab}
-                onChange={handleTabChange}
-                indicatorColor="transparent"
-                textColor="inherit"
-                centered
-                scrollButtons="auto" // Allow scrolling on small screens
-                variant="scrollable" // Makes the tabs scrollable on small screens
-                sx={{
-                    width: '100%',
-                    background: 'linear-gradient(to right, #1976d2, #42a5f5)', // Gradient background
-                    borderRadius: '10px',
-                    padding: '8px 0', // Adjust the vertical padding
-                    marginBottom: '16px',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-                }}
-            >
-                {['college1', 'college2', 'college3'].map((college) => (
-                    <Tab
-                        key={college}
-                        label={
-                            college === 'college1' ? 'Amrit Law College' :
-                            college === 'college2' ? 'Roorkee Degree College' :
-                            'Amrit College of Education'
-                        }
-                        value={college}
-                        sx={{
-                            color: 'white',
-                            fontWeight: 'bold',
-                            textTransform: 'none',
-                            borderRadius: '10px',
-                            padding: '10px 24px', // Adjust padding for a better visual appearance
-                            margin: '0 16px', // Decrease space between each tab
-                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                            transition: 'background-color 0.3s, transform 0.3s',
-                            '&:hover': {
-                                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                transform: 'scale(1.05)',
-                            },
-                            '&.Mui-selected': {
-                                backgroundColor: '#ffffff',
-                                color: '#1976d2',
+      <Box sx={{ width: '100%', padding: 2 }}>
+            {/* Render Tabs or Dropdown based on screen size */}
+            {isMobile ? (
+                // Dropdown for mobile screens
+                <Select
+                    value={activeTab}
+                    onChange={handleSelectChange}
+                    variant="outlined"
+                    fullWidth
+                    sx={{
+                        marginBottom: '16px',
+                        background: '#a65320',
+                        color: 'white',
+                        borderRadius: '10px',
+                    }}
+                >
+                    {Object.keys(collegeLabels).map((college) => (
+                        <MenuItem key={college} value={college}>
+                            {collegeLabels[college]}
+                        </MenuItem>
+                    ))}
+                </Select>
+            ) : (
+                // Tabs for larger screens
+                <Tabs
+                    value={activeTab}
+                    onChange={handleTabChange}
+                    indicatorColor="transparent"
+                    textColor="inherit"
+                    centered
+                    sx={{
+                        width: '100%',
+                        background: '#a65320',
+                        borderRadius: '10px',
+                        padding: '8px 0',
+                        marginBottom: '16px',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                    }}
+                >
+                    {Object.keys(collegeLabels).map((college) => (
+                        <Tab
+                            key={college}
+                            label={collegeLabels[college]}
+                            value={college}
+                            sx={{
+                                color: 'white',
                                 fontWeight: 'bold',
-                                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-                                transform: 'scale(1.1)',
-                            },
-                        }}
-                    />
-                ))}
-            </Tabs>
+                                textTransform: 'none',
+                                borderRadius: '10px',
+                                padding: '10px 24px',
+                                margin: '0 16px',
+                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                transition: 'background-color 0.3s, transform 0.3s',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                                    transform: 'scale(1.05)',
+                                },
+                                '&.Mui-selected': {
+                                    backgroundColor: '#ffffff',
+                                    color: '#a65320',
+                                    fontWeight: 'bold',
+                                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                                    transform: 'scale(1.1)',
+                                },
+                            }}
+                        />
+                    ))}
+                </Tabs>
+            )}
 
             {/* Courses cards */}
             <Grid container spacing={2} justifyContent="center">

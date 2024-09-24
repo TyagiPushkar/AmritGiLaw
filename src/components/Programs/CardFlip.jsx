@@ -41,7 +41,7 @@ const Front = styled(CardSide)({
 });
 
 const Back = styled(CardSide)({
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#a65320',
     transform: 'rotateY(180deg)',
     padding: '16px',
     display: 'flex',
@@ -81,7 +81,7 @@ const CardFlip = ({ course }) => (
                 <Card sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <CardHeader
                         title={course.degree}
-                        sx={{ width: '100%', backgroundColor: '#1976d2', color: 'white', textAlign: 'center', paddingBottom: '0' }}
+                        sx={{ width: '100%', backgroundColor: '#a65320', color: 'white', textAlign: 'center', paddingBottom: '0' }}
                     />
                     <Divider />
                     <CardContent sx={{ textAlign: 'center' }}>

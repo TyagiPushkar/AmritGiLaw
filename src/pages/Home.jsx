@@ -21,7 +21,7 @@ const Home = () => {
                 <Title subTitle='OUR Courses' title='What We Offer' />
                 <Programs />
                 
-                <Title subTitle='Gallery' title='Campus Photos' />
+                <Title title='Campus Photos' />
                 <Campus />
                 {/* <Title subTitle='TESTIMONIALS' title='What Student Says' />
                 <Testimonials /> */}

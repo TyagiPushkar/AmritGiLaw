@@ -32,7 +32,7 @@
 /* Notice Styles */
 .notice {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(239, 236, 236, 0.466);
     position: absolute;
     top: 80px;
     left: 0;
@@ -45,10 +45,14 @@
     /* Prevent wrapping */
     animation: scroll 20s linear infinite;
     /* Continuous scrolling */
-    color: #fff;
+    color: black;
+    /* background-color: white; */
     padding: 10px 0;
+    animation-play-state: running;
 }
-
+.notice-content:hover{
+    animation-play-state: paused;
+}
 /* Animation Keyframes */
 @keyframes scroll {
     0% {
