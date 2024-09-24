@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+ }
+
+ body {
+    background: #F5F5F5;
+ }
+
+ a {
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+    cursor: pointer;
+ }
+
+
+ .container {
+    padding-left: 10%;
+    padding-right: 10%;
+    max-width: 100%;
+ }
+
+ /* .container {
+   width: 100%;
+ } */
+p{
+   text-align: justify;
+}
+ .btn {
+    background: #FFF;
+    color: #212121;
+    padding: 14px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .btn:hover {
+    background: #d8d8d8;
+    color: black;
+ }
+
+
+ .btn img {
+    width: 20px;
+    margin-left: 10px;
+ }
+
+ .btn.dark-btn {
+    background: #3a48c4;
+    color: white;
+ }
+
+ .btn.dark-btn:hover {
+    background: #28349f;
+    color: white;
+ }
+
+ /*======== media querry =========*/
+ @media (max-width: 1200px) {
+    .container {
+       padding-left: 5%;
+       padding-right: 5%;
+    }
+
+    .btn {
+       padding: 14px 22px;
+    }
+ }
+
+ .floating-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+ }
+
+ .floating-icons a {
+    color: #fff;
+    background-color: #0077b5;
+    /* For LinkedIn default color */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+ }
+
+ .floating-icons a:hover {
+    background-color: #005582;
+ }
+
+ .floating-icons a:nth-child(2) {
+    background-color: #3b5998;
+    /* Facebook */
+ }
+
+ .floating-icons a:nth-child(2):hover {
+    background-color: #2d4373;
+ }
+
+ .floating-icons a:nth-child(3) {
+    background-color: #1da1f2;
+    /* Twitter */
+ }
+
+ .floating-icons a:nth-child(3):hover {
+    background-color: #0d95e8;
+ }
+
+ .floating-icons a svg {
+    color: white;
+    font-size: 20px;
+ }
+ html {
+    scroll-behavior: smooth;
+ }
+
+ .floating-icons1 {
+    display: flex;
+   justify-content: space-around;
+    flex-direction: row;
+    
+ }
+
+ .floating-icons1 a {
+    color: #fff;
+    background-color: #b53900;
+    /* For LinkedIn default color */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+ }
+
+ .floating-icons1 a:hover {
+    background-color: #e14418;
+ }
+
+ .floating-icons1 a:nth-child(2) {
+    background-color: #3b5998;
+    /* Facebook */
+ }
+
+ .floating-icons1 a:nth-child(2):hover {
+    background-color: #2d4373;
+ }
+
+ .floating-icons1 a:nth-child(3) {
+    background-color: #1da1f2;
+    /* Twitter */
+ }
+
+ .floating-icons1 a:nth-child(3):hover {
+    background-color: #0d95e8;
+ }
+
+ .floating-icons1 a svg {
+    color: white;
+    font-size: 20px;
+ }

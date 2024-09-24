@@ -1,0 +1,218 @@
+/* ===== Navbar Styling ===== */
+nav {
+    width: 100%;
+    color: #fff;
+    padding: 4px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background: transparent;
+    transition: background-color 0.5s;
+}
+
+.logo {
+    height: 70px;
+    width: 70px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 16px;
+    margin: 0;
+    position: relative;
+    /* To position dropdown relative to its parent */
+}
+
+nav.sticky,
+.dark-nav {
+    background: #a65320;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.contact-button {
+    background-color: #e7c282;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background-color: #ff4c4c;
+}
+
+/* ===== Dropdown Styling with Animation ===== */
+ul.dropdown {
+    display: block;
+    position: absolute;
+    top: 120%;
+    /* Position dropdown below the parent */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 4px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease-in-out;
+    /* Smooth fade and slide down */
+}
+
+ul.dropdown li {
+    padding: 8px 16px;
+    width: 200px;
+}
+
+ul.dropdown li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+ul.dropdown li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown with animation when hovering over the parent list item */
+li:hover>ul.dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* Slide down to original position */
+}
+
+/* ===== Mobile Menu Styling ===== */
+@media (max-width: 1000px) {
+    .logo {
+        width: 70px;
+    }
+
+    nav ul li {
+        margin: 10px 15px;
+    }
+}
+
+@media (max-width: 840px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #3a48c4;
+        z-index: 1000;
+        /* Ensure it's above other elements */
+        width: 250px;
+        /* Adjust width as needed */
+        padding-top: 70px;
+        /* Space for the logo or header */
+        transition: transform 0.5s ease;
+        /* Smooth transition for the menu */
+        transform: translateX(100%);
+        /* Initially hide the menu off-screen */
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+        /* Slide in when active */
+    }
+
+    nav ul li {
+        display: block;
+        /* Ensure each menu item is block */
+        margin: 15px 0;
+        /* Add some margin for spacing */
+    }
+
+    .menu-icon {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    /* Mobile Menu Specific Styling */
+    .mobile-menu {
+        display: block;
+        /* Ensure menu is shown */
+    }
+
+    .mobile-menu .dropdown {
+        display: block;
+        /* Make dropdown visible */
+        padding-left: 20px;
+        /* Indent for dropdown items */
+        margin-top: 10px;
+        /* Space between parent and dropdown */
+    }
+
+    .mobile-menu .dropdown li {
+        margin: 5px 0;
+        /* Space between dropdown items */
+    }
+
+    .mobile-menu li a {
+        display: block;
+        /* Ensure the link fills the block */
+        padding: 10px;
+        /* Add padding for clickable area */
+        color: #fff;
+        /* Change text color */
+        text-decoration: none;
+    }
+
+    .mobile-menu li a:hover {
+        background-color: #ff6b6b;
+        /* Add hover effect */
+    }
+
+    .hide-mobile-menu {
+        transform: translateX(100%);
+        /* Hide menu off screen */
+        transition: transform 0.5s ease;
+        /* Smooth transition */
+    }
+        ul.dropdown li a:hover {
+            background-color: #f1f1f1;
+        }
+                ul.dropdown {
+                    display: block;
+                    position: absolute;
+                    top: 120%;
+                    /* Position dropdown below the parent */
+                    left: 0;
+                    background-color: #fff;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    border-radius: 4px;
+                    z-index: 999;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-20px);
+                    transition: all 0.4s ease-in-out;
+                    /* Smooth fade and slide down */
+                }
+
+}
