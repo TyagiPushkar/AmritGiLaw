@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
+
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
@@ -54,6 +56,17 @@ const App = () => {
         </Routes>
         <Footer />
         <VideoPlayer playState={playState} setPlayState={setPlayState} />
+         <div className="floating-icons">
+        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <FaLinkedin />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+          <FaFacebook />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+          <FaTwitter />
+        </a>
+      </div>
       </BrowserRouter>
     </AuthProvider>
   );
