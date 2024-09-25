@@ -97,6 +97,7 @@ const Syllabus = () => {
     const [activeTab, setActiveTab] = useState('Amrit Law College');
     const [selectedCourse, setSelectedCourse] = useState(null);
     const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen size
+
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
         setSelectedCourse(null); // Reset course when a new college is selected
@@ -105,16 +106,13 @@ const Syllabus = () => {
     const handleCourseSelect = (course) => {
         setSelectedCourse(course);
     };
- const handleSelectChange = (event) => {
+
+    const handleSelectChange = (event) => {
         setActiveTab(event.target.value);
     };
+
     const handleSemesterSelect = (pdfUrl) => {
         window.open(pdfUrl, '_blank'); // Open the PDF in a new tab
-    };
-const collegeLabels = {
-        college1: 'Amrit Law College',
-        college2: 'Roorkee Degree College',
-        college3: 'Amrit College of Education'
     };
     return (
         <div style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}>
@@ -135,11 +133,11 @@ const collegeLabels = {
                         borderRadius: '10px',
                     }}
                 >
-                    {Object.keys(collegeLabels).map((college) => (
-                        <MenuItem key={college} value={college}>
-                            {collegeLabels[college]}
-                        </MenuItem>
-                    ))}
+                    {Object.keys(syllabusData).map((college) => (
+                            <MenuItem key={college} value={college}>
+                                {college}
+                            </MenuItem>
+                        ))}
                 </Select>
             ) : (
                 <Tabs
@@ -182,6 +180,7 @@ const collegeLabels = {
                                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                                     transform: 'scale(1.1)',
                                 },
+                                margin: '0 120px', // Add margin here
                             }}
                         />
                     ))}

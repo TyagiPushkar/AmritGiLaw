@@ -85,6 +85,7 @@ const collegeLabels = {
                         padding: '8px 0',
                         marginBottom: '16px',
                         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                       
                     }}
                 >
                     {Object.keys(collegeLabels).map((college) => (
@@ -112,6 +113,8 @@ const collegeLabels = {
                                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                                     transform: 'scale(1.1)',
                                 },
+                               margin: '0 70px', // Add margin here
+
                             }}
                         />
                     ))}

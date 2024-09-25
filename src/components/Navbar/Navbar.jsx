@@ -3,6 +3,7 @@ import './Navbar.css';
 import logo from '../../assets/AmGLogo.png';
 import menu_icon from '../../assets/menu-icon.png';
 import { Link, useLocation } from 'react-router-dom';
+import { FaHome } from "react-icons/fa";
 
 const Navbar = () => {
     const [sticky, setSticky] = useState(false);
@@ -39,6 +40,7 @@ const Navbar = () => {
             </Link>
             <img src={menu_icon} alt="Menu Icon" className='menu-icon' onClick={toggleMenu} />
             <ul className={`mobile-menu ${mobileMenu ? 'active' : ''}`}>
+                <li><Link to='/'style={{fontSize:"30px"}}><FaHome /></Link></li>
                 <li><Link to='/about'>About us</Link></li>
                 <li>
                     <Link to='/'>Academic</Link>
