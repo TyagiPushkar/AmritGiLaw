@@ -30,6 +30,8 @@ const App = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
+                  <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+
         <ScrollToTop />
         <Navbar />
         <Routes>
@@ -66,6 +68,7 @@ const App = () => {
         <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
           <FaTwitter />
         </a>
+      </div>
       </div>
       </BrowserRouter>
     </AuthProvider>
