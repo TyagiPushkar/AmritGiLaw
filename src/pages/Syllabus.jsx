@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Box, Tabs, Tab, Grid, Card, CardContent, Typography, Button } from '@mui/material';
+import { Box, Tabs, Tab, Grid, Card, CardContent, Typography, Button, useMediaQuery, Select, MenuItem } from '@mui/material';
 
 // Mock data for colleges, courses, and semesters with their respective PDF links.
 const syllabusData = {
+    
     "Amrit Law College": {
         courses: {
             "BBA LL.B": {
@@ -95,7 +96,7 @@ const syllabusData = {
 const Syllabus = () => {
     const [activeTab, setActiveTab] = useState('Amrit Law College');
     const [selectedCourse, setSelectedCourse] = useState(null);
-
+    const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen size
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
         setSelectedCourse(null); // Reset course when a new college is selected
@@ -104,27 +105,54 @@ const Syllabus = () => {
     const handleCourseSelect = (course) => {
         setSelectedCourse(course);
     };
-
+ const handleSelectChange = (event) => {
+        setActiveTab(event.target.value);
+    };
     const handleSemesterSelect = (pdfUrl) => {
         window.open(pdfUrl, '_blank'); // Open the PDF in a new tab
     };
-
+const collegeLabels = {
+        college1: 'Amrit Law College',
+        college2: 'Roorkee Degree College',
+        college3: 'Amrit College of Education'
+    };
     return (
         <div style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}>
             <h1>Course's Syllabus</h1>
             <Box sx={{ width: '100%', padding: 2 }}>
                 {/* Tabs for college selection */}
+                 {isMobile ? (
+                // Dropdown for mobile screens
+                <Select
+                    value={activeTab}
+                    onChange={handleSelectChange}
+                    variant="outlined"
+                    fullWidth
+                    sx={{
+                        marginBottom: '16px',
+                        background: '#a65320',
+                        color: 'white',
+                        borderRadius: '10px',
+                    }}
+                >
+                    {Object.keys(collegeLabels).map((college) => (
+                        <MenuItem key={college} value={college}>
+                            {collegeLabels[college]}
+                        </MenuItem>
+                    ))}
+                </Select>
+            ) : (
                 <Tabs
                     value={activeTab}
                     onChange={handleTabChange}
                     indicatorColor="transparent"
                     textColor="inherit"
                     centered
-                    sx={{
+                   sx={{
                         width: '100%',
-                        background: 'linear-gradient(to right, #1976d2, #42a5f5)', // Gradient background
+                        background: '#a65320',
                         borderRadius: '10px',
-                        padding: '8px',
+                        padding: '8px 0',
                         marginBottom: '16px',
                         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
                     }}
@@ -135,14 +163,13 @@ const Syllabus = () => {
                             label={college}
                             value={college}
                             sx={{
-                                color: 'white',
+                                color: '#a65320',
                                 fontWeight: 'bold',
                                 textTransform: 'none',
                                 borderRadius: '10px',
-                                padding: '10px 20px',
-                                margin: '0 56px', // Space between each tab
-
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                padding: '10px 24px',
+                                margin: '0 16px',
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
                                 transition: 'background-color 0.3s, transform 0.3s',
                                 '&:hover': {
                                     backgroundColor: 'rgba(255, 255, 255, 0.3)',
@@ -150,7 +177,7 @@ const Syllabus = () => {
                                 },
                                 '&.Mui-selected': {
                                     backgroundColor: '#ffffff',
-                                    color: '#1976d2',
+                                    color: '#a65320',
                                     fontWeight: 'bold',
                                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                                     transform: 'scale(1.1)',
@@ -159,7 +186,7 @@ const Syllabus = () => {
                         />
                     ))}
                 </Tabs>
-
+            )}
                 {/* Course Cards */}
                 {syllabusData[activeTab] && (
                     <Grid container spacing={2} justifyContent="center">
@@ -175,7 +202,7 @@ const Syllabus = () => {
                                                 onClick={() =>
                                                     handleSemesterSelect(syllabusData[activeTab].courses[course].semesters[semester])
                                                 }
-                                                style={{ margin: '5px' }}
+                                                style={{ margin: '5px',color:"#a65320",border:"1px solid #a65320" }}
                                             >
                                                 {semester}
                                             </Button>

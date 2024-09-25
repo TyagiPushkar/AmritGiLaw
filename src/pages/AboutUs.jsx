@@ -34,7 +34,7 @@ const slider = useRef();
 
                 <About setPlayState={setPlayState} />
                 <div>
-                    <h3>ABOUT AAMRIT GROUP OF INSTITUTIONS</h3>
+                    <h3 style={{color:"#a65320"}}>ABOUT AAMRIT GROUP OF INSTITUTIONS</h3>
                     <br />
                     <p>
                         Companies today are looking for visionaries who can create the future, and then execute with the speed and excellence it takes to succeed. The mission is to serve the society especially the rural, by providing state of the art teaching learning process.. Offering paramount quality technical staff and faculty.

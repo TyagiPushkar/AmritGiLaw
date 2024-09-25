@@ -12,7 +12,7 @@ const About = ({ setPlayState }) => {
         {/* <img src={play_icon} alt="" className='play-icon' onClick={() => { setPlayState(true) }} /> */}
       </div>
       <div className="about-right">
-        <h3>ABOUT AMRIT GROUP OF INSTITUTIONS</h3>
+        <h3 style={{color:"#a65320"}}>ABOUT AMRIT GROUP OF INSTITUTIONS</h3>
         <h2></h2>
         <p>AMRIT GROUP OF INSTITUTIONS was established in the year 2006, with thedynamic leadership of renowned Mr.Vikas Tyagi, Chairman AMRIT GROUPF    INSTITUTIONS, with the vision and mission of promoting quality education in the State of Uttarakhand, by providing professional education. The Institute has opened various higher educational institutes/Colleges granting education in the field of Law, Agriculture & Educational courses, by the names of <br />
          <br /><Link to="/courses" style={{color:"#a65320",fontWeight:"bold"}}>ROORKEE DEGREE COLLEGE (Est. 2006),</Link>  <br /> <Link to="/courses" style={{color:"#a65320",fontWeight:"bold"}}>AMRIT COLLEGE OF EDUCATION (Est. 2010),</Link> <br /> <Link to="/courses" style={{color:"#a65320",fontWeight:"bold"}}>AMRIT LAW COLLEGE (Est. 2012),</Link> <br /> <br />

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import dark_arrow from '../../assets/dark-arrow.png';
+import dark_arrow from '../../assets/white-arrow.png';
 import pdf from "../../assets/AMRIT LAW COLLEGE - ADMISSION FORM.pdf"
 
 const Hero = () => {
@@ -22,14 +22,9 @@ const Hero = () => {
             <div className="hero-text">
                 <h1>Believes in the all-round development of its students</h1>
                 <p style={{ textAlign: "center" }}>and therefore leaves no stone unturned to ensure this.</p>
-                <button className="btn">Explore more <img src={dark_arrow} alt="" /></button>
+                <button className="btn" style={{backgroundColor:"#a65320", color:"white"}}>Explore more <img src={dark_arrow} alt="" style={{ color:"white"}} /></button>
             </div>
-            {/* Notice Section */}
-            {/* <div className="notice">
-                <div className="notice-content">
-                    <p>This is a continuous notice that will run across the bottom of the hero section. Stay tuned for updates!</p>
-                </div>
-            </div> */}
+            
         </div>
     );
 };
