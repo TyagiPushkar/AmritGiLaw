@@ -24,7 +24,7 @@ const EventCard = ({ images, eventName }) => {
       <img 
         src={images[0]} // Display only the first image
         alt={eventName} 
-        style={{ width: '300px', cursor: 'pointer' }} 
+        style={{ maxWidth: '300px', cursor: 'pointer' }} 
         onClick={handleOpen} 
       />
       <Typography variant="h6" align="center" style={{ marginTop: '8px' }}>

@@ -9,6 +9,11 @@ import bed from "../../assets/bed.png";
 import bscagri from "../../assets/B.ScAgriculture.png";
 import bsccs from "../../assets/BScComputerScience.png";
 import bschs from "../../assets/bschs.png";
+import blibsc from "../../assets/BLibSc.jpeg";
+import mlibsc from "../../assets/MLibSc.jpeg";
+import ciy from "../../assets/ciy.jpeg";
+import pgdy from "../../assets/pgdy.jpeg";
+import may from "../../assets/may.jpeg";
 
 const Programs = () => {
      const [activeTab, setActiveTab] = useState('college1');
@@ -35,11 +40,12 @@ const Programs = () => {
             { degree: "B.Sc. (Agriculture)", duration: "8 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bscagri },
             { degree: "B.Sc. (CS)", duration: "6 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bsccs },
             { degree: "B.Sc. (HS)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bschs },
-            { degree: "B. Lib. Sc. (Library Science)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bballb },
-            { degree: "M. Lib. Sc. (Library Science)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bballb },
-            { degree: "Certificate in Yoga", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: bballb },
-            { degree: "P.G. Diploma in Yoga", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: bballb },
-            { degree: "M.A. In Yoga", duration: "4 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: bballb }
+           { degree: "Certificate in Yoga", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: ciy },
+            { degree: "P.G. Diploma in Yoga", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: pgdy },
+            { degree: "M.A. In Yoga", duration: "4 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: may },
+          { degree: "B. Lib. Sc. (Library Science)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: blibsc },
+            { degree: "M. Lib. Sc. (Library Science)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: mlibsc },
+            
         ]
     };
 const collegeLabels = {
