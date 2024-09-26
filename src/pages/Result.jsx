@@ -1,199 +1,143 @@
-import React, { useState } from 'react';
-import { Box, Tabs, Tab, Typography, Button } from '@mui/material';
-
-// Mock data for colleges, courses, and result sheets with their respective PDF links and images.
-const resultData = {
-    "College A": {
-        courses: {
-            "Course 1": {
-                semesters: {
-                    "Semester 1": {
-                        pdf: "path/to/collegeA_course1_sem1_result.pdf",
-                        image: "path/to/collegeA_course1_sem1_image.png"
-                    },
-                    "Semester 2": {
-                        pdf: "path/to/collegeA_course1_sem2_result.pdf",
-                        image: "path/to/collegeA_course1_sem2_image.png"
-                    },
-                },
-            },
-            "Course 2": {
-                semesters: {
-                    "Semester 1": {
-                        pdf: "path/to/collegeA_course2_sem1_result.pdf",
-                        image: "path/to/collegeA_course2_sem1_image.png"
-                    },
-                    "Semester 2": {
-                        pdf: "path/to/collegeA_course2_sem2_result.pdf",
-                        image: "path/to/collegeA_course2_sem2_image.png"
-                    },
-                },
-            },
-        },
-    },
-    "College B": {
-        courses: {
-            "Course 3": {
-                semesters: {
-                    "Semester 1": {
-                        pdf: "path/to/collegeB_course3_sem1_result.pdf",
-                        image: "path/to/collegeB_course3_sem1_image.png"
-                    },
-                    "Semester 2": {
-                        pdf: "path/to/collegeB_course3_sem2_result.pdf",
-                        image: "path/to/collegeB_course3_sem2_image.png"
-                    },
-                },
-            },
-        },
-    },
-    "College C": {
-        courses: {
-            "Course 4": {
-                semesters: {
-                    "Semester 1": {
-                        pdf: "path/to/collegeC_course4_sem1_result.pdf",
-                        image: "path/to/collegeC_course4_sem1_image.png"
-                    },
-                },
-            },
-        },
-    },
-};
+import React, { useState, useEffect } from 'react';
+import { Box, Tabs, Tab, Grid, Card, CardContent, Typography, Button, useMediaQuery, Select, MenuItem } from '@mui/material';
 
 const Result = () => {
-    const [activeTab, setActiveTab] = useState('College A');
+    const [activeTab, setActiveTab] = useState('');
+    const [resultData, setResultData] = useState({});
     const [selectedCourse, setSelectedCourse] = useState(null);
-    const [selectedSemester, setSelectedSemester] = useState(null);
+    const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen size
+
+    // Fetch results from API
+    useEffect(() => {
+        const fetchResults = async () => {
+            try {
+                const response = await fetch('https://namami-infotech.com/AmritGi/get_result.php');
+                const data = await response.json();
+                if (data.success) {
+                    setResultData(data.data);
+                    setActiveTab(Object.keys(data.data)[0]); // Set the first college as the default active tab
+                }
+            } catch (error) {
+                console.error('Error fetching result data:', error);
+            }
+        };
+
+        fetchResults();
+    }, []);
 
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
-        setSelectedCourse(null); // Reset course and semester when a new college is selected
-        setSelectedSemester(null);
+        setSelectedCourse(null); // Reset course when a new college is selected
     };
 
-    const handleCourseSelect = (course) => {
-        setSelectedCourse(course);
-        setSelectedSemester(null); // Reset semester when a new course is selected
+    const handleSelectChange = (event) => {
+        setActiveTab(event.target.value);
     };
 
-    const handleSemesterSelect = (semester, { pdf, image }) => {
-        setSelectedSemester(semester);
-        window.open(pdf, '_blank'); // Open the PDF in a new tab
+    const handleSemesterSelect = (pdfUrl) => {
+        window.open(pdfUrl, '_blank'); // Open the PDF in a new tab
     };
 
     return (
-         <div style={{marginTop:"100px",minHeight:"500px"}}>
-        <Box sx={{ width: '100%', padding: 2 }}>
-            {/* Tabs for college selection */}
-            <Tabs
-                value={activeTab}
-                    onChange={handleTabChange}
-                    indicatorColor="transparent"
-                    textColor="inherit"
-                    centered
-                    sx={{
-                        width: '100%',
-                        background: 'linear-gradient(to right, #1976d2, #42a5f5)', // Gradient background
-                        borderRadius: '10px',
-                        padding: '8px',
-                        marginBottom: '16px',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-                    }}
-            >
-                {Object.keys(resultData).map(college => (
-                    <Tab key={college} label={college} value={college} 
-                   
-                            sx={{
-                                color: 'white',
-                                fontWeight: 'bold',
-                                textTransform: 'none',
-                                borderRadius: '10px',
-                                padding: '10px 20px',
-                                margin: '0 56px', // Space between each tab
-
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                transition: 'background-color 0.3s, transform 0.3s',
-                                '&:hover': {
-                                    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                    transform: 'scale(1.05)',
-                                },
-                                '&.Mui-selected': {
-                                    backgroundColor: '#ffffff',
-                                    color: '#1976d2',
+        <div style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}>
+            <h1>Result Board</h1>
+            <Box sx={{ width: '100%', padding: 2 }}>
+                {/* Tabs for college selection */}
+                {isMobile ? (
+                    // Dropdown for mobile screens
+                    <Select
+                        value={activeTab}
+                        onChange={handleSelectChange}
+                        variant="outlined"
+                        fullWidth
+                        sx={{
+                            marginBottom: '16px',
+                            background: '#a65320',
+                            color: 'white',
+                            borderRadius: '10px',
+                        }}
+                    >
+                        {Object.keys(resultData).map((college) => (
+                            <MenuItem key={college} value={college}>
+                                {college}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                ) : (
+                    <Tabs
+                        value={activeTab}
+                        onChange={handleTabChange}
+                        indicatorColor="transparent"
+                        textColor="inherit"
+                        centered
+                        sx={{
+                            width: '100%',
+                            background: '#a65320',
+                            borderRadius: '10px',
+                            padding: '8px 0',
+                            marginBottom: '16px',
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                        }}
+                    >
+                        {Object.keys(resultData).map((college) => (
+                            <Tab
+                                key={college}
+                                label={college}
+                                value={college}
+                                sx={{
+                                    color: '#a65320',
                                     fontWeight: 'bold',
-                                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-                                    transform: 'scale(1.1)',
-                                },
-                            }}/>
-                ))}
-            </Tabs>
-
-            {/* Course and Semester Selection */}
-            {selectedCourse === null ? (
-                <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
-                    <Typography variant="h6">Select Course for {activeTab}</Typography>
-                    {Object.keys(resultData[activeTab].courses).map(course => (
-                        <Button
-                            key={course}
-                            onClick={() => handleCourseSelect(course)}
-                            sx={{
-                                margin: "10px",
-                                padding: "10px 20px",
-                                backgroundColor: selectedCourse === course ? "#ccc" : "#007bff",
-                                color: "white",
-                                border: "none",
-                                cursor: "pointer",
-                                '&:hover': {
-                                    backgroundColor: '#0056b3',
-                                }
-                            }}
-                        >
-                            {course}
-                        </Button>
-                    ))}
-                </Box>
-            ) : (
-                <>
-                 <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
-                    <Typography variant="h6">Select Semester for {selectedCourse}</Typography>
-                    {Object.keys(resultData[activeTab].courses[selectedCourse].semesters).map(semester => (
-                        <Button
-                            key={semester}
-                            onClick={() => handleSemesterSelect(
-                                semester,
-                                resultData[activeTab].courses[selectedCourse].semesters[semester]
-                            )}
-                            sx={{
-                                margin: "10px",
-                                padding: "10px 20px",
-                                backgroundColor: selectedSemester === semester ? "#ccc" : "#007bff",
-                                color: "white",
-                                border: "none",
-                                cursor: "pointer",
-                                '&:hover': {
-                                    backgroundColor: '#0056b3',
-                                }
-                            }}
-                        >
-                            {semester}
-                        </Button>
-                    ))}
-</Box>
-                    {/* Display the image for the selected semester */}
-                    {selectedSemester && (
-                        <Box sx={{ textAlign: 'center', marginTop: '20px' }}>
-                            <Typography variant="h6">Result Sheet Image for {selectedSemester}</Typography>
-                            <img
-                                src={resultData[activeTab].courses[selectedCourse].semesters[selectedSemester].image}
-                                alt={`Result Sheet for ${selectedSemester}`}
-                                style={{ maxWidth: '100%', height: 'auto', marginTop: '10px' }}
+                                    textTransform: 'none',
+                                    borderRadius: '10px',
+                                    padding: '10px 24px',
+                                    margin: '0 16px',
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    transition: 'background-color 0.3s, transform 0.3s',
+                                    '&:hover': {
+                                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                                        transform: 'scale(1.05)',
+                                    },
+                                    '&.Mui-selected': {
+                                        backgroundColor: '#ffffff',
+                                        color: '#a65320',
+                                        fontWeight: 'bold',
+                                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                                        transform: 'scale(1.1)',
+                                    },
+                                    margin: '0 120px', // Add margin here
+                                }}
                             />
-                        </Box>
-                    )}
-                </>
-            )}
-        </Box>
+                        ))}
+                    </Tabs>
+                )}
+                
+                {/* Course and Semester Cards */}
+                {resultData[activeTab] && (
+                    <Grid container spacing={2} justifyContent="center">
+                        {Object.keys(resultData[activeTab]).map((course) => (
+                            <Grid item xs={12} sm={6} md={4} lg={4} key={course}>
+                                <Card>
+                                    <CardContent>
+                                        <Typography variant="h6">{course}</Typography>
+                                        {Object.keys(resultData[activeTab][course]).map((semester) => (
+                                            <Button
+                                                key={semester}
+                                                variant="outlined"
+                                                onClick={() =>
+                                                    handleSemesterSelect(resultData[activeTab][course][semester])
+                                                }
+                                                style={{ margin: '5px', color: "#a65320", border: "1px solid #a65320" }}
+                                            >
+                                                {semester}
+                                            </Button>
+                                        ))}
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                )}
+            </Box>
         </div>
     );
 };

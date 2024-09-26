@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import { Container, Typography, Box, Tabs, Tab, useMediaQuery, Select, MenuItem, Grid } from '@mui/material';
 import CampusPhotoUpload from './CampusPhotoUpload';
 import UploadEvents from './UploadEvents';
+import UploadResult from './UploadResult';
+import UploadSyllabus from './UploadSyllabus';
+import SyllabusBoard from './SyllabusBoard';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('campusImages');
@@ -119,13 +122,14 @@ const AdminDashboard = () => {
           )}
           {activeTab === 'result' && (
             <Grid item xs={12}>
-              <Typography align="center">Results Content</Typography>
+              <UploadResult/>
               {/* Add your results content here */}
             </Grid>
           )}
           {activeTab === 'syllabus' && (
             <Grid item xs={12}>
-              <Typography align="center">Syllabus Content</Typography>
+              <UploadSyllabus/>
+              <SyllabusBoard/>
               {/* Add your syllabus content here */}
             </Grid>
           )}
