@@ -7,7 +7,7 @@ const Departments = () => {
 
     return (
         <>
-            <div style={{marginTop:"100px",minHeight:"500px"}}>
+            <div style={{marginTop:"0px",minHeight:"500px"}}>
 
  <div className='about'>
       <div className="about-left">
