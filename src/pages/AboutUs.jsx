@@ -8,7 +8,10 @@ import gallery_1 from '../assets/op.jpg';
 import gallery_2 from '../assets/aaa.jpg';
 import gallery_3 from '../assets/yy.jpg';
 import gallery_4 from '../assets/pdaaaa.jpeg';
+import { useMediaQuery } from '@mui/material'
 const AboutUs = () => {
+      const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen size
+
     const [playState, setPlayState] = useState(false);
 const slider = useRef();
     let tx = 0;
@@ -30,7 +33,7 @@ const slider = useRef();
 
     return (
         <>
-            <div className="container">
+            <div className="container"style={{ marginTop: isMobile?"30px":"0px" }} >
 
                 <About setPlayState={setPlayState} />
                 <div>

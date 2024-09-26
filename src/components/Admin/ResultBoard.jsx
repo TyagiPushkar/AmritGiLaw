@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Typography, Table, TableBody, TableCell, TableHead, TableRow, Paper, Button, Snackbar } from '@mui/material';
+import { Container, Typography, Table, TableBody, TableCell, TableHead, TableRow, Button, Snackbar, Box } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 
 // Alert component for Snackbar
@@ -51,36 +51,38 @@ const ResultBoard = () => {
   };
 
   const handleDelete = async (college_name, course_name, semester) => {
-  try {
-    const response = await axios.post(
-      'https://namami-infotech.com/AmritGi/delete_result.php',
-      {
-        college_name: college_name,
-        course_name: course_name,
-        semester: semester,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json', // Set content type to JSON
+    try {
+      const response = await axios.post(
+        'https://namami-infotech.com/AmritGi/delete_result.php',
+        {
+          college_name: college_name,
+          course_name: course_name,
+          semester: semester,
         },
+        {
+          headers: {
+            'Content-Type': 'application/json', // Set content type to JSON
+          },
+        }
+      );
+      if (response.data.success) {
+        setSnackbarMessage('Deleted successfully');
+        setSnackbarOpen(true);
+        // Optionally, refresh results here
+        const updatedResults = results.filter(
+          (result) => !(result.college_name === college_name && result.course_name === course_name && result.semester === semester)
+        );
+        setResults(updatedResults);
+      } else {
+        setSnackbarMessage(`Failed to delete: ${response.data.message}`);
+        setSnackbarOpen(true);
       }
-    );
-    if (response.data.success) {
-      setSnackbarMessage('Deleted successfully');
-      setSnackbarOpen(true);
-      // Optionally, refresh results here
-    } else {
-      setSnackbarMessage(`Failed to delete: ${response.data.message}`);
+    } catch (error) {
+      console.error('Error during deletion:', error);
+      setSnackbarMessage('Error during deletion');
       setSnackbarOpen(true);
     }
-  } catch (error) {
-    console.error('Error during deletion:', error);
-    setSnackbarMessage('Error during deletion');
-    setSnackbarOpen(true);
-  }
-};
-
-
+  };
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
@@ -96,7 +98,7 @@ const ResultBoard = () => {
         Results Board
       </Typography>
 
-      <Paper>
+      <Box overflow="auto"> {/* Responsive container */}
         <Table>
           <TableHead>
             <TableRow>
@@ -113,12 +115,11 @@ const ResultBoard = () => {
                   <TableCell>{result.college_name}</TableCell>
                   <TableCell>{result.course_name}</TableCell>
                   <TableCell>{result.semester}</TableCell>
-                  
                   <TableCell>
                     <Button
                       variant="contained"
-                      color="secondary"
-                      onClick={() => handleDelete(result.college_name,result.course_name,result.semester)}
+                      style={{ backgroundColor: "#a65320" }}
+                      onClick={() => handleDelete(result.college_name, result.course_name, result.semester)}
                     >
                       Delete
                     </Button>
@@ -127,14 +128,14 @@ const ResultBoard = () => {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={5} align="center">
+                <TableCell colSpan={4} align="center"> {/* Adjust colspan to match the number of columns */}
                   No results found.
                 </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
-      </Paper>
+      </Box>
 
       <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
         <Alert onClose={handleSnackbarClose} severity="success">

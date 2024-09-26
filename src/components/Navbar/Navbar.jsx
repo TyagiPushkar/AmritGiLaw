@@ -27,6 +27,10 @@ const Navbar = () => {
         setMobileMenu(!mobileMenu);
     };
 
+    const closeMenu = () => {
+        setMobileMenu(false);
+    };
+
     const isHomePage = location.pathname === '/';
 
     return (
@@ -40,39 +44,39 @@ const Navbar = () => {
             </Link>
             <img src={menu_icon} alt="Menu Icon" className='menu-icon' onClick={toggleMenu} />
             <ul className={`mobile-menu ${mobileMenu ? 'active' : ''}`}>
-                <li><Link to='/'style={{fontSize:"30px"}}><FaHome /></Link></li>
-                <li><Link to='/about'>About us</Link></li>
+                <li><Link to='/' style={{ fontSize: "30px" }} onClick={closeMenu}><FaHome /></Link></li>
+                <li><Link to='/about' onClick={closeMenu}>About us</Link></li>
                 <li>
-                    <Link to='/'>Academic</Link>
+                    <Link to='/' onClick={closeMenu}>Academic</Link>
                     <ul className='dropdown'>
-                        <li><Link to='/courses'>Courses</Link></li>
-                        <li><Link to='/examination'>Examination</Link></li>
-                        <li><Link to='/affiliation'>Affiliation</Link></li>
+                        <li><Link to='/courses' onClick={closeMenu}>Courses</Link></li>
+                        <li><Link to='/examination' onClick={closeMenu}>Examination</Link></li>
+                        <li><Link to='/affiliation' onClick={closeMenu}>Affiliation</Link></li>
                     </ul>
                 </li>
                 <li>
-                    <Link to='/departments'>Departments</Link>
+                    <Link to='/departments' onClick={closeMenu}>Departments</Link>
                     <ul className='dropdown'>
-                        <li><Link to='/education-department'>Department of Education</Link></li>
-                        <li><Link to='/law-department'>Department of Law</Link></li>
-                        <li><Link to='/ayurveda-department'>Department of Ayurveda</Link></li>
-                        <li><Link to='/agriculture-department'>Department of Agriculture</Link></li>
-                        <li><Link to='/yoga-department'>Department of Yoga</Link></li>
-                        <li><Link to='/computer-science-department'>Department of Computer Science</Link></li>
-                        <li><Link to='/library-department'>Department of Library</Link></li>
-                        <li><Link to='/home-science-department'>Department of Home Science</Link></li>
+                        <li><Link to='/education-department' onClick={closeMenu}>Department of Education</Link></li>
+                        <li><Link to='/law-department' onClick={closeMenu}>Department of Law</Link></li>
+                        <li><Link to='/ayurveda-department' onClick={closeMenu}>Department of Ayurveda</Link></li>
+                        <li><Link to='/agriculture-department' onClick={closeMenu}>Department of Agriculture</Link></li>
+                        <li><Link to='/yoga-department' onClick={closeMenu}>Department of Yoga</Link></li>
+                        <li><Link to='/computer-science-department' onClick={closeMenu}>Department of Computer Science</Link></li>
+                        <li><Link to='/library-department' onClick={closeMenu}>Department of Library</Link></li>
+                        <li><Link to='/home-science-department' onClick={closeMenu}>Department of Home Science</Link></li>
                     </ul>
                 </li>
                 <li>
-                    <Link to='/'>Student's Corner</Link>
+                    <Link to='/' onClick={closeMenu}>Student's Corner</Link>
                     <ul className='dropdown'>
-                        <li><Link to='/syllabus'>Syllabus</Link></li>
-                        <li><Link to='/result'>Result</Link></li>
-                        <li><Link to='/resources'>Central Library</Link></li>
+                        <li><Link to='/syllabus' onClick={closeMenu}>Syllabus</Link></li>
+                        <li><Link to='/result' onClick={closeMenu}>Result</Link></li>
+                        <li><Link to='/resources' onClick={closeMenu}>Central Library</Link></li>
                     </ul>
                 </li>
-                <li><Link to='/events'>Events</Link></li>
-                <li><Link to='/contact' className='contact-button'>Contact us</Link></li>
+                <li><Link to='/events' onClick={closeMenu}>Events</Link></li>
+                <li><Link to='/contact' className='contact-button' onClick={closeMenu}>Contact us</Link></li>
             </ul>
         </nav>
     );

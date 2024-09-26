@@ -209,3 +209,9 @@ p{
  .carousel-button:focus {
     outline: none;
  }
+ @media (max-width: 600px) {
+    .MuiTableCell-root {
+       padding: 8px;
+       font-size: 14px;
+    }
+ }
