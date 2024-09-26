@@ -1,24 +1,31 @@
-// src/context/AuthContext.js
-import React, { createContext, useState, useContext } from 'react';
+// src/components/AuthContext.js
+
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [adminId, setAdminId] = useState(null);
+  const [adminId, setAdminId] = useState(() => localStorage.getItem('admin_id')); // Get the initial state from localStorage
 
   const login = (id) => {
-    setIsAuthenticated(true);
     setAdminId(id);
+    localStorage.setItem('admin_id', id); // Save admin_id to localStorage
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
     setAdminId(null);
+    localStorage.removeItem('admin_id'); // Remove admin_id from localStorage
   };
 
+  useEffect(() => {
+    const storedId = localStorage.getItem('admin_id');
+    if (storedId) {
+      setAdminId(storedId); // Restore admin_id from localStorage on mount
+    }
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, adminId, login, logout }}>
+    <AuthContext.Provider value={{ adminId, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

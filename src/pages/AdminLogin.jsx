@@ -1,5 +1,3 @@
-// src/pages/AdminLogin.jsx
-
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -28,13 +26,15 @@ const AdminLogin = () => {
 
     const data = await response.json();
 
-    if (response.ok) {
+    // Check for a successful login based on the response data
+    if (response.ok && data.message === "Login successful!") {
       setSuccessMessage(data.message);
       localStorage.setItem('admin_id', data.admin_id);
       login(data.admin_id); // Set authentication state
       navigate('/admin-dashboard');
     } else {
-      setErrorMessage(data.error);
+      // Set error message from the server response
+      setErrorMessage(data.error || 'Login failed. Please try again.');
     }
   };
 

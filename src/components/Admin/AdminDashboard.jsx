@@ -1,16 +1,20 @@
 // src/pages/AdminDashboard.jsx
 
 import React, { useState } from 'react';
-import { Container, Typography, Box, Tabs, Tab, useMediaQuery, Select, MenuItem, Grid } from '@mui/material';
+import { Container, Typography, Box, Tabs, Tab, useMediaQuery, Select, MenuItem, Grid, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import CampusPhotoUpload from './CampusPhotoUpload';
 import UploadEvents from './UploadEvents';
 import UploadResult from './UploadResult';
 import UploadSyllabus from './UploadSyllabus';
 import SyllabusBoard from './SyllabusBoard';
+import { useAuth } from '../AuthContext'; // Import useAuth
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('campusImages');
-  const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen size
+  const isMobile = useMediaQuery('(max-width: 600px)');
+  const navigate = useNavigate(); // Initialize useNavigate
+  const { logout } = useAuth(); // Get logout function from context
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -18,6 +22,12 @@ const AdminDashboard = () => {
 
   const handleSelectChange = (event) => {
     setActiveTab(event.target.value);
+  };
+
+  const handleLogout = () => {
+    logout(); // Call logout from context
+    localStorage.removeItem('admin_id'); // Clear admin_id from localStorage
+    navigate('/'); // Redirect to home page
   };
 
   const tabLabels = {
@@ -29,15 +39,20 @@ const AdminDashboard = () => {
   };
 
   return (
-    <Container style={{ marginTop: isMobile?"130px":"100px" }}>
+    <Container style={{ marginTop: isMobile ? "130px" : "100px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Admin Dashboard
       </Typography>
       
+      {/* Logout Button */}
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
+        <Button variant="contained" style={{backgroundColor:"#a65320"}} onClick={handleLogout}>
+          Logout
+        </Button>
+      </Box>
+
       <Box sx={{ width: '100%', padding: 2 }}>
-        {/* Render Tabs or Dropdown based on screen size */}
         {isMobile ? (
-          // Dropdown for mobile screens
           <Select
             value={activeTab}
             onChange={handleSelectChange}
@@ -57,7 +72,6 @@ const AdminDashboard = () => {
             ))}
           </Select>
         ) : (
-          // Tabs for larger screens
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
@@ -98,45 +112,37 @@ const AdminDashboard = () => {
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                     transform: 'scale(1.1)',
                   },
-                 
                 }}
               />
             ))}
           </Tabs>
         )}
 
-        {/* Content based on active tab */}
         <Grid container spacing={2} justifyContent="center">
-          {/* Render different content based on the selected tab */}
           {activeTab === 'campusImages' && (
             <Grid item xs={12}>
-              <CampusPhotoUpload/>
-              {/* Add your campus images here */}
+              <CampusPhotoUpload />
             </Grid>
           )}
           {activeTab === 'eventImages' && (
             <Grid item xs={12}>
-              <UploadEvents/>
-              {/* Add your event images here */}
+              <UploadEvents />
             </Grid>
           )}
           {activeTab === 'result' && (
             <Grid item xs={12}>
-              <UploadResult/>
-              {/* Add your results content here */}
+              <UploadResult />
             </Grid>
           )}
           {activeTab === 'syllabus' && (
             <Grid item xs={12}>
-              <UploadSyllabus/>
-              <SyllabusBoard/>
-              {/* Add your syllabus content here */}
+              <UploadSyllabus />
+              <SyllabusBoard />
             </Grid>
           )}
           {activeTab === 'dateSheet' && (
             <Grid item xs={12}>
               <Typography align="center">Date Sheet Content</Typography>
-              {/* Add your date sheet content here */}
             </Grid>
           )}
         </Grid>
