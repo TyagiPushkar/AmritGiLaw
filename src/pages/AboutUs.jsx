@@ -33,7 +33,7 @@ const slider = useRef();
 
     return (
         <>
-            <div className="container"style={{ marginTop: isMobile?"30px":"0px" }} >
+            <div className="container"style={{ marginTop: isMobile?"80px":"80px" }} >
 
                 <About setPlayState={setPlayState} />
                 <div>
