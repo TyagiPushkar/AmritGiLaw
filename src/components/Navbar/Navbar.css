@@ -97,7 +97,41 @@ li:hover>ul.dropdown {
     transform: translateY(0);
     /* Slide down to original position */
 }
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 0px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
 
+.dropdown {
+    display: none;
+    background-color: #a65320;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown li {
+    margin: 5px 0;
+}
+
+.dropdown li a {
+    color: white;
+    padding: 5px;
+    display: block;
+}
+
+.dropdown li a:hover {
+    background-color: #ff6b6b;
+}
 /* ===== Mobile Menu Styling ===== */
 @media (max-width: 1000px) {
     .logo {
@@ -107,6 +141,11 @@ li:hover>ul.dropdown {
     nav ul li {
         margin: 10px 15px;
     }
+         .dropdown-toggle {
+             padding: 10px;
+             
+         }
+                 
 }
 
 @media (max-width: 840px) {
@@ -215,5 +254,11 @@ li:hover>ul.dropdown {
                     transition: all 0.4s ease-in-out;
                     /* Smooth fade and slide down */
                 }
-
+                               
+}
+/* Add this CSS for the dropdown functionality */
+@media (max-width: 600px) {
+.dropdown.active li {
+        background-color: white;
+    }
 }

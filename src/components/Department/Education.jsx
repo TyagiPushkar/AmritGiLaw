@@ -9,12 +9,12 @@ const Education = () => {
         <>
             <div style={{marginTop:"0px",minHeight:"500px"}}>
 
- <div className='about'>
-      <div className="about-left">
-        <img src={education} alt="" className='departments-img' style={{width:"400px"}} />
-        {/* <img src={play_icon} alt="" className='play-icon' onClick={() => { setPlayState(true) }} /> */}
+          <div className='about'>
+            <div className="about-left">
+                  <img src={education} alt="" className='departments-img' style={{width:"400px"}} />
+              {/* <img src={play_icon} alt="" className='play-icon' onClick={() => { setPlayState(true) }} /> */}
       </div>
-      <div className="about-right">
+                 <div className="about-right">
         <h2>Department Of Education</h2>
         <h3>Chairman's Message</h3><br />
        <p>I am pleased to share with you that our prestigious institute SDBIT is committed to provide value based education which would assist in bringing out qualitative improvement in teacher education and will enhance the knowledge and skill of the student. We draw attention on all round development of the students for which, the department organize various activities besides teaching i.e quiz, debate, essay, meditation, sports, culture and social activities. It has experienced and qualified teachers who try to do the best for making their teaching effective and bringing desired outcomes.</p>

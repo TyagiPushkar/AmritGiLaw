@@ -9,6 +9,9 @@ const Navbar = () => {
     const [sticky, setSticky] = useState(false);
     const location = useLocation();
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [academicDropdown, setAcademicDropdown] = useState(false);
+    const [studentCornerDropdown, setStudentCornerDropdown] = useState(false);
+const [departmentDropdown, setDepartmentDropdown] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,6 +34,17 @@ const Navbar = () => {
         setMobileMenu(false);
     };
 
+    const toggleAcademicDropdown = () => {
+        setAcademicDropdown(!academicDropdown);
+    };
+
+    const toggleStudentCornerDropdown = () => {
+        setStudentCornerDropdown(!studentCornerDropdown);
+    };
+    const toggleDepartmentCornerDropdown = () => {
+        setDepartmentDropdown(!departmentDropdown);
+    };
+
     const isHomePage = location.pathname === '/';
 
     return (
@@ -47,16 +61,21 @@ const Navbar = () => {
                 <li><Link to='/' style={{ fontSize: "30px" }} onClick={closeMenu}><FaHome /></Link></li>
                 <li><Link to='/about' onClick={closeMenu}>About us</Link></li>
                 <li>
-                    <Link to='/' onClick={closeMenu}>Academic</Link>
-                    <ul className='dropdown'>
+                    <button onClick={toggleAcademicDropdown} className="dropdown-toggle">
+                        Academic
+                    </button>
+                    <ul className={`dropdown ${academicDropdown ? 'active' : ''}`}>
                         <li><Link to='/courses' onClick={closeMenu}>Courses</Link></li>
                         <li><Link to='/examination' onClick={closeMenu}>Examination</Link></li>
                         <li><Link to='/affiliation' onClick={closeMenu}>Affiliation</Link></li>
                     </ul>
                 </li>
                 <li>
-                    <Link to='/departments' onClick={closeMenu}>Departments</Link>
-                    <ul className='dropdown'>
+                   
+                     <button onClick={toggleDepartmentCornerDropdown} className="dropdown-toggle">
+                        Departments
+                    </button>
+                     <ul className={`dropdown ${departmentDropdown ? 'active' : ''}`}>
                         <li><Link to='/education-department' onClick={closeMenu}>Department of Education</Link></li>
                         <li><Link to='/law-department' onClick={closeMenu}>Department of Law</Link></li>
                         <li><Link to='/ayurveda-department' onClick={closeMenu}>Department of Ayurveda</Link></li>
@@ -68,8 +87,10 @@ const Navbar = () => {
                     </ul>
                 </li>
                 <li>
-                    <Link to='/' onClick={closeMenu}>Student's Corner</Link>
-                    <ul className='dropdown'>
+                    <button onClick={toggleStudentCornerDropdown} className="dropdown-toggle">
+                        Student's Corner
+                    </button>
+                    <ul className={`dropdown ${studentCornerDropdown ? 'active' : ''}`}>
                         <li><Link to='/syllabus' onClick={closeMenu}>Syllabus</Link></li>
                         <li><Link to='/result' onClick={closeMenu}>Result</Link></li>
                         <li><Link to='/resources' onClick={closeMenu}>Central Library</Link></li>
