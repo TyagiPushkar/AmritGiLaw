@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaFilePdf } from "react-icons/fa";
-
+import EPG from "../assets/EPG.jpg"
 const CentralLib = ({ setPlayState }) => {
     const sectionStyle = {
     textAlign: 'center',
@@ -12,10 +12,7 @@ const CentralLib = ({ setPlayState }) => {
     maxWidth: '800px',
   };
 
- 
-   
   return (
-    
     <div style={sectionStyle}>
         <div className="about-right" style={{marginTop:"50px"}}>
             <h2 style={{color:"#a65320"}}>On-Line Learning Resources</h2>
@@ -63,6 +60,16 @@ const CentralLib = ({ setPlayState }) => {
   <li><Link to="https://www.pdfdrive.com/category/15" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Labour Law - I&nbsp; <FaFilePdf /> </Link></li>
   <li><Link to="https://www.pdfdrive.com/category/15" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Labour Law - II&nbsp; <FaFilePdf /> </Link></li>
   <li><Link to="https://www.pdfdrive.com/category/15" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Indian Evidence Act (Hindi)   &nbsp; <FaFilePdf /> </Link></li>
+
+              </ul>
+
+          </div>
+           <div className="about-right" style={{ marginTop: "50px" }}>
+              <h3 style={{ color: "#a65320", fontSize: "25px" }}>e-PG Pathshala</h3>
+              <br />
+              <p>e-PG Pathshala is an initiative of the MHRD under its National Mission  on Education through ICT (NME-ICT) being executed by the UGC.</p> <br />
+              <ul style={{ listStyle: "none", textAlign: "center", display: "grid", gridTemplateColumns: "auto", gap: "10px" }}>
+                    <li><Link to="https://epgp.inflibnet.ac.in/" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'> <img src={EPG} alt="" /> </Link></li>
 
               </ul>
 

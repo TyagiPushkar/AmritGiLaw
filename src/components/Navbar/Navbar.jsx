@@ -75,7 +75,8 @@ const [departmentDropdown, setDepartmentDropdown] = useState(false);
                      <button onClick={toggleDepartmentCornerDropdown} className="dropdown-toggle">
                         Departments
                     </button>
-                     <ul className={`dropdown ${departmentDropdown ? 'active' : ''}`}>
+                    <ul className={`dropdown ${departmentDropdown ? 'active' : ''}`}>
+                        <li><Link to='/departments' onClick={closeMenu}>Departments</Link></li>
                         <li><Link to='/education-department' onClick={closeMenu}>Department of Education</Link></li>
                         <li><Link to='/law-department' onClick={closeMenu}>Department of Law</Link></li>
                         <li><Link to='/ayurveda-department' onClick={closeMenu}>Department of Ayurveda</Link></li>
