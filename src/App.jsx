@@ -24,6 +24,7 @@ import ProtectedRoute from './components/ProtectedRoute'; // Import Protected Ro
 import AdminDashboard from './components/Admin/AdminDashboard';
 import { AuthProvider } from './components/AuthContext'; // Import AuthProvider
 import ISAC from './pages/ISAC';
+import CentralLib from './pages/CentralLib';
 
 const App = () => {
   const [playState, setPlayState] = useState(false);
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/education-department" element={<Education />} />
           <Route path="/affiliation" element={<Affiliation />} />
           <Route path="/isac" element={<ISAC/>} />
+          <Route path="/resources" element={<CentralLib/>} />
           <Route path="/login" element={<AdminLogin />} />
 
           {/* Protected Routes */}

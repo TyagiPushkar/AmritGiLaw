@@ -3,8 +3,9 @@ import isac_img from '../assets/isac.jpg';
 import "./ISAC.css"
 const ISAC = ({ setPlayState }) => {
   return (
-    <>
-      <h3 className="about-title" style={{marginTop:"100px"}}>
+      <>
+          <h2 className="about-title" style={{marginTop:"100px"}}>Institute Student Activity Council (ISAC)</h2>
+      <h3 className="about-title" >
         Governing Body of Institute Student Activity Council
       </h3>
       <div className='about'>
