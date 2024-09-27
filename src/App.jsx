@@ -23,6 +23,7 @@ import AdminLogin from './pages/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute'; // Import Protected Route
 import AdminDashboard from './components/Admin/AdminDashboard';
 import { AuthProvider } from './components/AuthContext'; // Import AuthProvider
+import ISAC from './pages/ISAC';
 
 const App = () => {
   const [playState, setPlayState] = useState(false);
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/result" element={<Result />} />
           <Route path="/education-department" element={<Education />} />
           <Route path="/affiliation" element={<Affiliation />} />
+          <Route path="/isac" element={<ISAC/>} />
           <Route path="/login" element={<AdminLogin />} />
 
           {/* Protected Routes */}

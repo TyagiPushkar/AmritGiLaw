@@ -94,6 +94,7 @@ const [departmentDropdown, setDepartmentDropdown] = useState(false);
                         <li><Link to='/syllabus' onClick={closeMenu}>Syllabus</Link></li>
                         <li><Link to='/result' onClick={closeMenu}>Result</Link></li>
                         <li><Link to='/resources' onClick={closeMenu}>Central Library</Link></li>
+                        <li><Link to='/isac' onClick={closeMenu}>Institute Student Activity Council (ISAC)</Link></li>
                     </ul>
                 </li>
                 <li><Link to='/events' onClick={closeMenu}>Events</Link></li>

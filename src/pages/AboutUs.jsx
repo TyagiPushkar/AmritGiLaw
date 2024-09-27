@@ -88,11 +88,11 @@ const slider = useRef();
                 </div>
                 <br />
                 <div>
-                    <h3>Approval / Affiliation</h3>
+                    <h2>Approval / Affiliation</h2>
                   <br />
                   <h3>Amrit Law College (PG)</h3>
-                    <br />
-                <h4>Law College is Affiliated to "Veer Madho Singh Bhandari Uttarakhand Technical University, Dehradun" and Bar Council of India, New Delhi.</h4>
+                   
+                <p>Law College is Affiliated to <b>"Veer Madho Singh Bhandari Uttarakhand Technical University, Dehradun"</b>  and <b> Bar Council of India, New Delhi.</b></p>
                   <br />
                 </div>
                 
@@ -100,19 +100,19 @@ const slider = useRef();
                     
                   <br />
                   <h3>Amrit College of Education</h3>
-                    <br />
-<h4>Amrit College of Education provides Various Degree & Diploma Programmes affiliated from Sri Dev Suman Uttarakhand University (SDSUC), Tehri Garhwal, Uttarakhand.
+                    
+<p>Amrit College of Education provides Various Degree & Diploma Programmes affiliated from <b> Sri Dev Suman Uttarakhand University (SDSUC), Tehri Garhwal, Uttarakhand.</b>
 
-</h4>                  <br />
+</p>                  <br />
                 </div>
                 <div>
                     
                   <br />
                   <h3>Roorkee Degree College</h3>
-                    <br />
-<h4>Bachelor of Education (B.Ed.) Course is affiliated from Hemwati Nandan Bahuguna Garhwal University (A Central University in Srinagar), Uttarakhand.
+                  
+<p>Bachelor of Education (B.Ed.) Course is affiliated from <b> Hemwati Nandan Bahuguna Garhwal University (A Central University in Srinagar), Uttarakhand.</b>
 
-</h4>
+</p>
                   <br />
                 </div>
             </div>

@@ -129,9 +129,7 @@ li:hover>ul.dropdown {
     display: block;
 }
 
-.dropdown li a:hover {
-    background-color: #ff6b6b;
-}
+
 /* ===== Mobile Menu Styling ===== */
 @media (max-width: 1000px) {
     .logo {
