@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const ContactUs = () => {
   return (
     <>
-      <div style={{ marginTop: "100px", minHeight: "500px" }}>
+      <div style={{ marginTop: "10px", minHeight: "500px" }}>
         <Contact />
          <div className="floating-icons1" style={{marginTop:"-50px"}}>
             <div style={{display:'flex', gap:"5px", alignItems:"center"}}>  <a href="mailto:vikastyagi77@yahoo.com" target="_blank" rel="noreferrer">

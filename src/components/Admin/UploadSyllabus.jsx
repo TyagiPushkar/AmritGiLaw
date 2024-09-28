@@ -20,7 +20,9 @@ const collegeCourses = {
   college3: [
     { degree: "B.Sc. (Agriculture)", duration: "8 Sem." },
     { degree: "B.Sc. (CS)", duration: "6 Sem." },
-    { degree: "B.Sc. (HS)", duration: "2 Sem." }
+      { degree: "B.Sc. (HS)", duration: "2 Sem." },
+      { degree: "YOGA", duration: "4 Sem." },
+    { degree: "Lib.Sc.", duration: "2 Sem." }
   ]
 };
 

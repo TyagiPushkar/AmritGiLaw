@@ -25,6 +25,7 @@ import AdminDashboard from './components/Admin/AdminDashboard';
 import { AuthProvider } from './components/AuthContext'; // Import AuthProvider
 import ISAC from './pages/ISAC';
 import CentralLib from './pages/CentralLib';
+import Law from './components/Department/Law';
 
 const App = () => {
   const [playState, setPlayState] = useState(false);
@@ -46,7 +47,9 @@ const App = () => {
           <Route path="/examination" element={<Examination />} />
           <Route path="/syllabus" element={<Syllabus />} />
           <Route path="/result" element={<Result />} />
-          <Route path="/education-department" element={<Education />} />
+            <Route path="/education-department" element={<Education />} />
+            <Route path="/law-department" element={<Law />} />
+
           <Route path="/affiliation" element={<Affiliation />} />
           <Route path="/isac" element={<ISAC/>} />
           <Route path="/resources" element={<CentralLib/>} />
