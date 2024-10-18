@@ -79,7 +79,6 @@ const [departmentDropdown, setDepartmentDropdown] = useState(false);
                         <li><Link to='/departments' onClick={closeMenu}>Departments</Link></li>
                         <li><Link to='/education-department' onClick={closeMenu}>Department of Education</Link></li>
                         <li><Link to='/law-department' onClick={closeMenu}>Department of Law</Link></li>
-                        <li><Link to='/ayurveda-department' onClick={closeMenu}>Department of Ayurveda</Link></li>
                         <li><Link to='/agriculture-department' onClick={closeMenu}>Department of Agriculture</Link></li>
                         <li><Link to='/yoga-department' onClick={closeMenu}>Department of Yoga</Link></li>
                         <li><Link to='/computer-science-department' onClick={closeMenu}>Department of Computer Science</Link></li>
