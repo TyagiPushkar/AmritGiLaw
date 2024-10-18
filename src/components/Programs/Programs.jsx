@@ -31,10 +31,10 @@ const Programs = () => {
         college1: [
             { degree: 'BBA. LL.B', duration: '10 Sem.', nature: 'Regu.', modeOfAdmission: 'Direct/ Univ. Norms', seats: 120, image: bballb },
             { degree: 'LL.B', duration: '6 Sem.', nature: 'Regu.', modeOfAdmission: 'Direct/ Univ. Norms', seats: 120, image: llb },
-            { degree: 'LL.M', duration: '2 Sem.', nature: 'Regu.', modeOfAdmission: 'Direct/ Univ. Norms', seats: 60, image: llm }
+            { degree: 'LL.M', duration: '4 Sem.', nature: 'Regu.', modeOfAdmission: 'Direct/ Univ. Norms', seats: 60, image: llm }
         ],
         college2: [
-            { degree: 'B.Ed.', duration: '2 Years', nature: 'Regu.', modeOfAdmission: 'Direct/ Univ. Norms', seats: 100, image: bed }
+            { degree: 'B.Ed.', duration: '2 Years', nature: 'Regu.', modeOfAdmission: 'Univ. Norms', seats: 100, image: bed }
         ],
         college3: [
             { degree: "B.Sc. (Agriculture)", duration: "8 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bscagri },
