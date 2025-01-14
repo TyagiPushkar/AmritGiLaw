@@ -17,14 +17,14 @@ const ISAC = ({ setPlayState }) => {
           <div className="about-section" style={{display:"flex",justifyContent:"space-between"}}>
             <h4>1. Patron</h4>
             <ul>
-              <li>Dr. Jitendra Singh</li>
+              <li>Dr. Atul Verma</li>
             </ul>
           </div>
 
           <div className="about-section">
             <h4>2. Chairman</h4>
             <ul>
-              <li>Mr. Aarif Qureshi</li>
+              <li>Mr. Vikas Tyagi</li>
             </ul>
           </div>
 
