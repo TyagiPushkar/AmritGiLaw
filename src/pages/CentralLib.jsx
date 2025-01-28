@@ -59,7 +59,7 @@ const CentralLib = ({ setPlayState }) => {
   <li><Link to="https://namami-infotech.com/AmritGi/uploads/resources/ARBITRATION_And_CONCILIATION.pdf" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Law of Pleadings (Hindi)&nbsp; <FaFilePdf /> </Link></li>
   <li><Link to="https://namami-infotech.com/AmritGi/uploads/resources/ARBITRATION_And_CONCILIATION.pdf" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Labour Law - I&nbsp; <FaFilePdf /> </Link></li>
   <li><Link to="https://namami-infotech.com/AmritGi/uploads/resources/ARBITRATION_And_CONCILIATION.pdf" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Labour Law - II&nbsp; <FaFilePdf /> </Link></li>
-  <li><Link to="https://namami-infotech.com/AmritGi/uploads/resources/ARBITRATION_And_CONCILIATION.pdf" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Indian Evidence Act (Hindi)   &nbsp; <FaFilePdf /> </Link></li>
+  <li><Link to="https://namami-infotech.com/AmritGi/uploads/resources/ARBITRATION_And_CONCILIATIO.pdf" style={{color:"blue", fontSize:"20px", fontWeight:"400", textDecoration:"underline"}} target='_blank'>Indian Evidence Act (Hindi)   &nbsp; <FaFilePdf /> </Link></li>
 
               </ul>
 
