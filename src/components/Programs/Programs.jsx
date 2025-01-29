@@ -40,11 +40,11 @@ const Programs = () => {
             { degree: "B.Sc. (Agriculture)", duration: "8 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bscagri },
             { degree: "B.Sc. (CS)", duration: "6 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bsccs },
             { degree: "B.Sc. (HS)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: bschs },
-           { degree: "Certificate in Yoga", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: ciy },
+           { degree: "Certificate in Yoga", duration: "1 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: ciy },
             { degree: "P.G. Diploma in Yoga", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: pgdy },
             { degree: "M.A. In Yoga", duration: "4 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 30, image: may },
-          { degree: "B. Lib. Sc. (Library Science)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: blibsc },
-            { degree: "M. Lib. Sc. (Library Science)", duration: "2 Sem.", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: mlibsc },
+          { degree: "B. Lib. Sc. (Library Science)", duration: "1 Year", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: blibsc },
+            { degree: "M. Lib. Sc. (Library Science)", duration: "1 Year", nature: "Regu.", modeOfAdmission: "Direct/ Univ. Norms", seats: 60, image: mlibsc },
             
         ]
     };

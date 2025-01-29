@@ -27,7 +27,7 @@ const Campus = () => {
             if (galleryImages.length > 0) {
                 setCurrentIndex((prevIndex) => (prevIndex + 3) % galleryImages.length); // Increment by 3 to slide next set
             }
-        }, 3000); // Change image every 3 seconds
+        }, 5000); // Change image every 3 seconds
 
         return () => clearInterval(interval); // Cleanup interval on component unmount
     }, [galleryImages]);
