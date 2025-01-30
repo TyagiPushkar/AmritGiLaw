@@ -39,12 +39,12 @@ const Contact = () => {
         <div className='contact'>
             <div className="contact-col">
                 
-                <div style={{ marginTop: "10px", textAlign: "center" }}>
+                <div style={{ marginTop: "0px", textAlign: "center" }}>
        
-        <div style={{ width: "100%", height: "350px", marginTop: "20px" }}>
+        <div style={{ width: "100%", height: "350px", marginTop: "0px" }}>
           <iframe
   title="location-map"
-  width="80%"
+  width="100%"
   height="400"
   style={{ border: 0 }}
   loading="lazy"
