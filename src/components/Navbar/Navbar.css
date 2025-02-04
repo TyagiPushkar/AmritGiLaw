@@ -17,6 +17,8 @@ nav {
 .logo {
     height: 70px;
     width: 70px;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
 nav ul {
