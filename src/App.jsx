@@ -81,7 +81,7 @@ const App = () => {
             <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/amritgroupofinstitution" target="_blank" rel="noreferrer">
               <FaFacebook />
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
