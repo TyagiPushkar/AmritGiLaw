@@ -63,7 +63,7 @@ Eligibility: Graduation in any discipline with Minimum 45% marks for General / O
       
        <h3>Course Name: LL.M. <br />
 SPECIALIZATION: CRIMINAL LAW| CORPORATE LAW CONSITUTIONAL LAW <br />
-                            Course Duration: 1 Years Integrated Program
+                            Course Duration: 2 Years Integrated Program
                             <br />
                             Affiliation and Approval: Veer Madho Singh Bhandari Uttarakhand Technological University, Dehradun (State Govt. University). <br />Eligibility: Law Graduate (BA.LLB., BBA.LLB., LL.B.) with minimum 50% marks for all candidates and a valid CLAT & LSAT-India Score
                         </h3><br />

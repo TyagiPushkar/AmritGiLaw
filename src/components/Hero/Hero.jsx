@@ -8,7 +8,7 @@ const Hero = () => {
         <div className='hero container'>
            <div className="notice">
                 <div className="notice-content">
-                    <p>Admissions Open for batch 2024-2025. Fill admission form  <a 
+                    <p>Admissions Open for batch 2025-2026. Fill admission form  <a 
       
         href={pdf} // Link to the PDF file
         target="_blank" // Opens in a new tab
