@@ -19,7 +19,7 @@ const Education = () => {
         <h3>Chairman's Message</h3><br />
        <p>I am pleased to share with you that our prestigious institute Amrit Group of Institution is committed to provide value based education which would assist in bringing out qualitative improvement in teacher education and will enhance the knowledge and skill of the student. We draw attention on all round development of the students for which, the department organize various activities besides teaching i.e quiz, debate, essay, meditation, sports, culture and social activities. It has experienced and qualified teachers who try to do the best for making their teaching effective and bringing desired outcomes.</p>
 <br /><p>I felicitate to the new corners and aspirants and praise them for selecting the right institute which is very essential in the present time and advise them to implement the experience what they obtained during in their life.</p>
-<br /> <h4>Vikas Tyagi                    <br />                              Chairman-Amrit Group of Institution</h4>
+<br /> <h4>Vikas Tyagi.                    <br />                              Chairman-Amrit Group of Institution</h4>
       </div>
 
     </div>
