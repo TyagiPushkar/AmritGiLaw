@@ -119,11 +119,18 @@ p{
     background-color: #1da1f2;
     /* Twitter */
  }
+ 
 
  .floating-icons a:nth-child(3):hover {
     background-color: #0d95e8;
  }
-
+.floating-icons a:nth-child(4) {
+   background-color: #256803;
+   /* Twitter */
+}
+ .floating-icons a:nth-child(4):hover {
+    background-color: #4f962b;
+ }
  .floating-icons a svg {
     color: white;
     font-size: 20px;

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -63,7 +63,7 @@ const App = () => {
             <Route path="/isac" element={<ISAC />} />
             <Route path="/resources" element={<CentralLib />} />
             <Route path="/login" element={<AdminLogin />} />
-            <Route path="/event/:eventName" element={<EventGallery/>} />
+            <Route path="/event/:eventName" element={<EventGallery />} />
             {/* Protected Routes */}
             <Route
               path="/admin-dashboard"
@@ -81,11 +81,18 @@ const App = () => {
             <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://www.facebook.com/amritgroupofinstitution" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/amritgroupofinstitution"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebook />
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
               <FaTwitter />
+            </a>
+            <a href="https://wa.me/9910070444" target="_blank" rel="noreferrer">
+              <FaWhatsapp />
             </a>
           </div>
         </div>
