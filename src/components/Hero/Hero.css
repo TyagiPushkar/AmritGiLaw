@@ -1,16 +1,44 @@
 .hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(rgba(8, 0, 58, 0.3), rgba(8, 0, 58, 0.4)), url('../../assets/CollegeBuilding.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* Added to stack elements vertically */
+    transition: background-image 1s ease-in-out;
+    position: relative;
 }
+
+/* Add a dark gradient shadow */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    /* Dark overlay */
+    z-index: 1;
+}
+
+/* Ensure text and content are above the shadow */
+.hero-text,
+.notice {
+    position: relative;
+    z-index: 2;
+}
+
+/* Optional: Add a soft shadow to the text */
+.hero-text h1,
+.hero-text p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
 
 .hero-text {
     text-align: center;
@@ -50,9 +78,11 @@
     padding: 10px 0;
     animation-play-state: running;
 }
-.notice-content:hover{
+
+.notice-content:hover {
     animation-play-state: paused;
 }
+
 /* Animation Keyframes */
 @keyframes scroll {
     0% {
