@@ -22,6 +22,7 @@ const Hero = () => {
   return (
     <div
       className="hero container"
+     
       style={{ backgroundImage: `url(${images[currentImage]})` }}
     >
       <div className="notice">

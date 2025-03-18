@@ -91,7 +91,7 @@ const App = () => {
             <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
               <FaTwitter />
             </a>
-            <a href="https://wa.me/9910070444" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/+919910070444" target="_blank" rel="noreferrer">
               <FaWhatsapp />
             </a>
           </div>
