@@ -11,6 +11,7 @@
     flex-direction: column;
     transition: background-image 1s ease-in-out;
     position: relative;
+    
 }
 
 /* Add a dark gradient shadow */
@@ -121,5 +122,16 @@
         margin-top: 100px;
     background-size: contain;
     min-height: 40vh;
+    background-color: #fff;
     }
+        .notice {
+            top: 0px;
+        }
+        .btn{
+            margin-bottom: 5px;
+        }
+                .hero::before{
+                    height: 92%;
+                }
+
 }
