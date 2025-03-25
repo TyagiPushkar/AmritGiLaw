@@ -4,8 +4,16 @@ import dark_arrow from "../../assets/white-arrow.png";
 import pdf from "../../assets/AMRIT LAW COLLEGE - ADMISSION FORM.pdf";
 
 const images = [
-  require("../../assets/CollegeBuilding.png"),
- require("../../assets/about.jpeg"),
+  // require("../../assets/hero/1.png"),
+  require("../../assets/hero/2.jpeg"),
+  // require("../../assets/hero/3.jpeg"),
+  require("../../assets/hero/4.jpeg"),
+  require("../../assets/hero/5.jpeg"),
+  require("../../assets/hero/6.jpeg"),
+  require("../../assets/hero/7.jpeg"),
+  // require("../../assets/hero/8.jpeg"),
+  require("../../assets/hero/9.jpeg"),
+  // require("../../assets/hero/10.jpeg"),
 ];
 
 const Hero = () => {

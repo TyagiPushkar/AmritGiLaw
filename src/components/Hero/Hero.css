@@ -1,7 +1,7 @@
 .hero {
     width: 100%;
-    min-height: 100vh;
-    background-size: cover;
+    min-height: 90vh;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
@@ -11,7 +11,7 @@
     flex-direction: column;
     transition: background-image 1s ease-in-out;
     position: relative;
-    
+    margin-top: 5%;
 }
 
 /* Add a dark gradient shadow */
@@ -63,7 +63,7 @@
     width: 100%;
     background-color: rgba(239, 236, 236, 0.466);
     position: absolute;
-    top: 100px;
+    top: 20px;
     left: 0;
     overflow: hidden;
     /* Hide overflow */
@@ -133,5 +133,4 @@
                 .hero::before{
                     height: 93%;
                 }
-
 }
