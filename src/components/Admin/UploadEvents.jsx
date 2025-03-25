@@ -63,7 +63,7 @@ const UploadEvents = () => {
   };
 
   return (
-    <Container style={{ marginTop: '50px' }}>
+    <Container style={{ marginTop: "50px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Upload Event Photos
       </Typography>
@@ -74,30 +74,39 @@ const UploadEvents = () => {
           placeholder="Event Name"
           value={eventName}
           onChange={(e) => setEventName(e.target.value)} // Update event name
-          style={{ marginBottom: '20px', padding: '10px', width: '100%' }}
+          style={{ marginBottom: "20px", padding: "10px", width: "100%" }}
         />
         <input
           type="file"
           accept="image/*"
           multiple // Allow multiple file selection
           onChange={handleFileChange} // Handle file selection
-          style={{ marginBottom: '20px' }}
+          style={{ marginBottom: "20px" }}
         />
-        <Button variant="contained" style={{ backgroundColor: "#a65320" }} onClick={handleUpload}>
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#f30202" }}
+          onClick={handleUpload}
+        >
           Upload Photos
         </Button>
 
-        <Grid container spacing={2} justifyContent="center" style={{ marginTop: '20px' }}>
+        <Grid
+          container
+          spacing={2}
+          justifyContent="center"
+          style={{ marginTop: "20px" }}
+        >
           {selectedFiles.map((file, index) => (
             <Grid item key={index} xs={6} sm={4} md={3}>
               <img
                 src={URL.createObjectURL(file)} // Create image preview
                 alt={`preview-${index}`}
                 style={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: '10px',
-                  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px",
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
                 }}
               />
             </Grid>
@@ -105,12 +114,16 @@ const UploadEvents = () => {
         </Grid>
       </Box>
 
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
         <Alert onClose={handleSnackbarClose} severity="success">
           {snackbarMessage}
         </Alert>
       </Snackbar>
-      <ViewEvent/>
+      <ViewEvent />
     </Container>
   );
 };

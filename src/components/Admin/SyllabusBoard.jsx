@@ -67,7 +67,7 @@ const SyllabusBoard = () => {
   }
 
   return (
-    <Container style={{ marginTop: '50px' }}>
+    <Container style={{ marginTop: "50px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Syllabus Board
       </Typography>
@@ -75,7 +75,7 @@ const SyllabusBoard = () => {
       {Object.keys(syllabus).length > 0 ? (
         Object.entries(syllabus).map(([collegeName, items], index) => (
           <div key={index}>
-            <Typography variant="h5" style={{ margin: '20px 0' }}>
+            <Typography variant="h5" style={{ margin: "20px 0" }}>
               {collegeName}
             </Typography>
             <Box overflow="auto">
@@ -95,8 +95,14 @@ const SyllabusBoard = () => {
                       <TableCell>
                         <Button
                           variant="contained"
-                          style={{ backgroundColor: "#a65320" }}
-                          onClick={() => handleDelete(item.college_name, item.course_name, item.semester)}
+                          style={{ backgroundColor: "#f30202" }}
+                          onClick={() =>
+                            handleDelete(
+                              item.college_name,
+                              item.course_name,
+                              item.semester
+                            )
+                          }
                         >
                           Delete
                         </Button>
@@ -109,10 +115,16 @@ const SyllabusBoard = () => {
           </div>
         ))
       ) : (
-        <Typography variant="h6" align="center">No syllabus found.</Typography>
+        <Typography variant="h6" align="center">
+          No syllabus found.
+        </Typography>
       )}
 
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
         <Alert onClose={handleSnackbarClose} severity="success">
           {snackbarMessage}
         </Alert>

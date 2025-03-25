@@ -39,16 +39,21 @@ const AdminLogin = () => {
   };
 
   return (
-    <Container maxWidth="xs" style={{ marginTop: '150px', minHeight: "360px" }}>
-      <Typography variant="h4" align="center">Admin Login</Typography>
-      <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+    <Container maxWidth="xs" style={{ marginTop: "150px", minHeight: "360px" }}>
+      <Typography variant="h4" align="center">
+        Admin Login
+      </Typography>
+      <form
+        onSubmit={handleLogin}
+        style={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
+      >
         <TextField
           label="Username"
           variant="outlined"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          style={{ marginBottom: '16px' }}
+          style={{ marginBottom: "16px" }}
         />
         <TextField
           label="Password"
@@ -57,12 +62,26 @@ const AdminLogin = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ marginBottom: '16px' }}
+          style={{ marginBottom: "16px" }}
         />
-        <Button variant="contained" style={{ backgroundColor: "#a65320" }} type="submit">Login</Button>
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#f30202" }}
+          type="submit"
+        >
+          Login
+        </Button>
       </form>
-      {errorMessage && <Typography color="error" align="center">{errorMessage}</Typography>}
-      {successMessage && <Typography color="primary" align="center">{successMessage}</Typography>}
+      {errorMessage && (
+        <Typography color="error" align="center">
+          {errorMessage}
+        </Typography>
+      )}
+      {successMessage && (
+        <Typography color="primary" align="center">
+          {successMessage}
+        </Typography>
+      )}
     </Container>
   );
 };

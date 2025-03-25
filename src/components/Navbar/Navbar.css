@@ -10,7 +10,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     z-index: 10;
-    background: #a65320;
+    background: #f30202;
     transition: background-color 0.5s;
 }
 
@@ -37,7 +37,7 @@ nav ul li {
 
 nav.sticky,
 .dark-nav {
-    background: #a65320;
+    background: #f30202;
 }
 
 .menu-icon {
@@ -45,15 +45,15 @@ nav.sticky,
 }
 
 .contact-button {
-    background-color: #e7c282;
-    color: #fff;
+    background-color: yellow;
+    color: black;
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
 }
 
 .contact-button:hover {
-    background-color: #ff4c4c;
+    background-color: rgb(231, 231, 43);
 }
 
 /* ===== Dropdown Styling with Animation ===== */
@@ -112,7 +112,7 @@ li:hover>ul.dropdown {
 
 .dropdown {
     display: none;
-    background-color: #a65320;
+    background-color: #f30202;
     padding-left: 20px;
     margin-top: 10px;
 }
@@ -158,7 +158,7 @@ li:hover>ul.dropdown {
         top: 0;
         right: 0;
         bottom: 0;
-        background: #a65320;
+        background: #f30202;
         z-index: 1000;
         /* Ensure it's above other elements */
         width: 250px;
@@ -198,7 +198,7 @@ li:hover>ul.dropdown {
 
     .mobile-menu .dropdown {
         display: block;
-        background-color: #a65320;
+        background-color: #f30202;
         /* Make dropdown visible */
         padding-left: 20px;
         /* Indent for dropdown items */

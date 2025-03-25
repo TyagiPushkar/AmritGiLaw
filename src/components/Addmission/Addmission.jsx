@@ -13,17 +13,17 @@ const Addmission = () => {
   };
 
   const buttonStyle = {
-    display: 'inline-flex',
-    padding: '14px 25px',
-    backgroundColor: '#a65320', // Adjust as needed
-    color: '#fff',
-    border: '0',
-    outline:"0",
-    borderRadius: '30px',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    fontSize: '16px',
-    marginTop: '20px',
+    display: "inline-flex",
+    padding: "14px 25px",
+    backgroundColor: "#f30202", // Adjust as needed
+    color: "#fff",
+    border: "0",
+    outline: "0",
+    borderRadius: "30px",
+    cursor: "pointer",
+    textDecoration: "none",
+    fontSize: "16px",
+    marginTop: "20px",
   };
    
   return (

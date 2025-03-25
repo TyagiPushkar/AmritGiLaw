@@ -41,67 +41,98 @@ const Front = styled(CardSide)({
 });
 
 const Back = styled(CardSide)({
-    backgroundColor: '#a65320',
-    transform: 'rotateY(180deg)',
-    padding: '16px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
+  backgroundColor: "#f30202",
+  transform: "rotateY(180deg)",
+  padding: "16px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
 });
 
 const InfoTypography = styled(Typography)({
-    marginBottom: '8px',
-    fontWeight: '500',
+  marginBottom: "8px",
+  fontWeight: "500",
 });
 
-const CardImage = styled('img')({
-    width: '250px',
-    height: 'auto',
-    marginBottom: '8px',
-    display: 'block',
+const CardImage = styled("img")({
+  width: "250px",
+  height: "auto",
+  marginBottom: "8px",
+  display: "block",
 });
 
 const CardFlip = ({ course }) => (
-    <FlipContainer>
-        <FlipCard>
-            {/* Front Side */}
-            <Front>
-                    <CardActionArea sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                        <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                            <CardImage src={course.image} alt="Course" />
-                            <Typography variant="h6" sx={{ textAlign: 'center' }}>{course.degree}</Typography>
-                        </CardContent>
-                    </CardActionArea>
-            </Front>
+  <FlipContainer>
+    <FlipCard>
+      {/* Front Side */}
+      <Front>
+        <CardActionArea
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <CardImage src={course.image} alt="Course" />
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              {course.degree}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Front>
 
-            {/* Back Side */}
-            <Back>
-                <Card sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                    <CardHeader
-                        title={course.degree}
-                        sx={{ width: '100%', backgroundColor: '#a65320', color: 'white', textAlign: 'center', paddingBottom: '0' }}
-                    />
-                    <Divider />
-                    <CardContent sx={{ textAlign: 'center' }}>
-                        <InfoTypography variant="body1" color="textPrimary">
-                            <strong>Duration:</strong> {course.duration}
-                        </InfoTypography>
-                        <InfoTypography variant="body1" color="textPrimary">
-                            <strong>Nature:</strong> {course.nature}
-                        </InfoTypography>
-                        <InfoTypography variant="body1" color="textPrimary">
-                            <strong>Mode of Admission:</strong> {course.modeOfAdmission}
-                        </InfoTypography>
-                        <InfoTypography variant="body1" color="textPrimary">
-                            <strong>Seats Available:</strong> {course.seats}
-                        </InfoTypography>
-                    </CardContent>
-                </Card>
-            </Back>
-        </FlipCard>
-    </FlipContainer>
+      {/* Back Side */}
+      <Back>
+        <Card
+          sx={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CardHeader
+            title={course.degree}
+            sx={{
+              width: "100%",
+              backgroundColor: "#f30202",
+              color: "white",
+              textAlign: "center",
+              paddingBottom: "0",
+            }}
+          />
+          <Divider />
+          <CardContent sx={{ textAlign: "center" }}>
+            <InfoTypography variant="body1" color="textPrimary">
+              <strong>Duration:</strong> {course.duration}
+            </InfoTypography>
+            <InfoTypography variant="body1" color="textPrimary">
+              <strong>Nature:</strong> {course.nature}
+            </InfoTypography>
+            <InfoTypography variant="body1" color="textPrimary">
+              <strong>Mode of Admission:</strong> {course.modeOfAdmission}
+            </InfoTypography>
+            <InfoTypography variant="body1" color="textPrimary">
+              <strong>Seats Available:</strong> {course.seats}
+            </InfoTypography>
+          </CardContent>
+        </Card>
+      </Back>
+    </FlipCard>
+  </FlipContainer>
 );
 
 export default CardFlip;

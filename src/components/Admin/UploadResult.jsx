@@ -88,14 +88,14 @@ const UploadResult = () => {
   };
 
   return (
-    <Container style={{ marginTop: '50px' }}>
+    <Container style={{ marginTop: "50px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Upload Result
       </Typography>
 
       <Box display="flex" flexDirection="column" alignItems="center">
         {/* Dropdown for College Name */}
-        <FormControl fullWidth style={{ marginBottom: '20px' }}>
+        <FormControl fullWidth style={{ marginBottom: "20px" }}>
           <InputLabel>Select College</InputLabel>
           <Select
             value={collegeName}
@@ -111,7 +111,7 @@ const UploadResult = () => {
 
         {/* Dropdown for Course Name */}
         {collegeName && (
-          <FormControl fullWidth style={{ marginBottom: '20px' }}>
+          <FormControl fullWidth style={{ marginBottom: "20px" }}>
             <InputLabel>Select Course</InputLabel>
             <Select
               value={courseName}
@@ -132,7 +132,7 @@ const UploadResult = () => {
           placeholder="Enter Semester"
           value={semester}
           onChange={(e) => setSemester(e.target.value)} // Update semester
-          style={{ marginBottom: '20px', padding: '10px', width: '100%' }}
+          style={{ marginBottom: "20px", padding: "10px", width: "100%" }}
         />
 
         {/* File Input */}
@@ -140,19 +140,27 @@ const UploadResult = () => {
           type="file"
           accept=".pdf, image/*"
           onChange={handleFileChange} // Handle file selection
-          style={{ marginBottom: '20px' }}
+          style={{ marginBottom: "20px" }}
         />
-        <Button variant="contained" style={{ backgroundColor: "#a65320" }} onClick={handleUpload}>
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#f30202" }}
+          onClick={handleUpload}
+        >
           Upload Result
         </Button>
       </Box>
 
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
         <Alert onClose={handleSnackbarClose} severity="success">
           {snackbarMessage}
         </Alert>
       </Snackbar>
-      <ResultBoard/>
+      <ResultBoard />
     </Container>
   );
 };

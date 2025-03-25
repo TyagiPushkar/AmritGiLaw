@@ -9,7 +9,7 @@
 }
 .contact-col{
     flex-basis: 48%;
-    color: #a65320;
+    color: #f30202;
 }
 .contact-col h2{
     color: black;
@@ -58,7 +58,7 @@
     margin: 20px 0;
 }
 .cnt-btn{
-    background-color: #a65320;
+    background-color: #f30202;
 }
 /*======== media querry =========*/
 

@@ -58,16 +58,25 @@ const ViewEvent = () => {
   }
 
   return (
-    <div className='campus' style={{ marginTop: '10px' }}>
-    
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
+    <div className="campus" style={{ marginTop: "10px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-evenly",
+        }}
+      >
         {events.map((event, index) => (
-          <div key={index} style={{ marginBottom: '20px' }}>
+          <div key={index} style={{ marginBottom: "20px" }}>
             <EventCard images={event.photos} eventName={event.event_name} />
-            
-            <Button variant="contained" style={{ backgroundColor: "#a65320" }} onClick={() => deleteEvent(event.event_name)}>
-          Delete Event
-        </Button>
+
+            <Button
+              variant="contained"
+              style={{ backgroundColor: "#f30202" }}
+              onClick={() => deleteEvent(event.event_name)}
+            >
+              Delete Event
+            </Button>
           </div>
         ))}
       </div>

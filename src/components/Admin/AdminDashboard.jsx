@@ -43,15 +43,25 @@ const AdminDashboard = () => {
       <Typography variant="h4" align="center" gutterBottom>
         Admin Dashboard
       </Typography>
-      
+
       {/* Logout Button */}
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
-        <Button variant="contained" style={{backgroundColor:"#a65320"}} onClick={handleLogout}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: "16px",
+        }}
+      >
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#f30202" }}
+          onClick={handleLogout}
+        >
           Logout
         </Button>
       </Box>
 
-      <Box sx={{ width: '100%', padding: 2 }}>
+      <Box sx={{ width: "100%", padding: 2 }}>
         {isMobile ? (
           <Select
             value={activeTab}
@@ -59,10 +69,10 @@ const AdminDashboard = () => {
             variant="outlined"
             fullWidth
             sx={{
-              marginBottom: '16px',
-              background: '#a65320',
-              color: 'white',
-              borderRadius: '10px',
+              marginBottom: "16px",
+              background: "#f30202",
+              color: "white",
+              borderRadius: "10px",
             }}
           >
             {Object.keys(tabLabels).map((tab) => (
@@ -79,12 +89,12 @@ const AdminDashboard = () => {
             textColor="inherit"
             centered
             sx={{
-              width: '100%',
-              background: '#a65320',
-              borderRadius: '10px',
-              padding: '8px 0',
-              marginBottom: '16px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+              width: "100%",
+              background: "#f30202",
+              borderRadius: "10px",
+              padding: "8px 0",
+              marginBottom: "16px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             }}
           >
             {Object.keys(tabLabels).map((tab) => (
@@ -93,24 +103,24 @@ const AdminDashboard = () => {
                 label={tabLabels[tab]}
                 value={tab}
                 sx={{
-                  color: '#a65320',
-                  fontWeight: 'bold',
-                  textTransform: 'none',
-                  borderRadius: '10px',
-                  padding: '10px 24px',
-                  margin: '0 16px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                  transition: 'background-color 0.3s, transform 0.3s',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                    transform: 'scale(1.05)',
+                  color: "#f30202",
+                  fontWeight: "bold",
+                  textTransform: "none",
+                  borderRadius: "10px",
+                  padding: "10px 24px",
+                  margin: "0 16px",
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  transition: "background-color 0.3s, transform 0.3s",
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 0.3)",
+                    transform: "scale(1.05)",
                   },
-                  '&.Mui-selected': {
-                    backgroundColor: '#ffffff',
-                    color: '#a65320',
-                    fontWeight: 'bold',
-                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-                    transform: 'scale(1.1)',
+                  "&.Mui-selected": {
+                    backgroundColor: "#ffffff",
+                    color: "#f30202",
+                    fontWeight: "bold",
+                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                    transform: "scale(1.1)",
                   },
                 }}
               />
@@ -119,28 +129,28 @@ const AdminDashboard = () => {
         )}
 
         <Grid container spacing={2} justifyContent="center">
-          {activeTab === 'campusImages' && (
+          {activeTab === "campusImages" && (
             <Grid item xs={12}>
               <CampusPhotoUpload />
             </Grid>
           )}
-          {activeTab === 'eventImages' && (
+          {activeTab === "eventImages" && (
             <Grid item xs={12}>
               <UploadEvents />
             </Grid>
           )}
-          {activeTab === 'result' && (
+          {activeTab === "result" && (
             <Grid item xs={12}>
               <UploadResult />
             </Grid>
           )}
-          {activeTab === 'syllabus' && (
+          {activeTab === "syllabus" && (
             <Grid item xs={12}>
               <UploadSyllabus />
               <SyllabusBoard />
             </Grid>
           )}
-          {activeTab === 'dateSheet' && (
+          {activeTab === "dateSheet" && (
             <Grid item xs={12}>
               <Typography align="center">Date Sheet Content</Typography>
             </Grid>

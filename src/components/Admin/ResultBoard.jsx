@@ -93,12 +93,14 @@ const ResultBoard = () => {
   }
 
   return (
-    <Container style={{ marginTop: '50px' }}>
+    <Container style={{ marginTop: "50px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Results Board
       </Typography>
 
-      <Box overflow="auto"> {/* Responsive container */}
+      <Box overflow="auto">
+        {" "}
+        {/* Responsive container */}
         <Table>
           <TableHead>
             <TableRow>
@@ -118,8 +120,14 @@ const ResultBoard = () => {
                   <TableCell>
                     <Button
                       variant="contained"
-                      style={{ backgroundColor: "#a65320" }}
-                      onClick={() => handleDelete(result.college_name, result.course_name, result.semester)}
+                      style={{ backgroundColor: "#f30202" }}
+                      onClick={() =>
+                        handleDelete(
+                          result.college_name,
+                          result.course_name,
+                          result.semester
+                        )
+                      }
                     >
                       Delete
                     </Button>
@@ -128,7 +136,9 @@ const ResultBoard = () => {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={4} align="center"> {/* Adjust colspan to match the number of columns */}
+                <TableCell colSpan={4} align="center">
+                  {" "}
+                  {/* Adjust colspan to match the number of columns */}
                   No results found.
                 </TableCell>
               </TableRow>
@@ -137,7 +147,11 @@ const ResultBoard = () => {
         </Table>
       </Box>
 
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
         <Alert onClose={handleSnackbarClose} severity="success">
           {snackbarMessage}
         </Alert>

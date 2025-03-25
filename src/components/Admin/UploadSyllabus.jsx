@@ -89,14 +89,14 @@ const UploadSyllabus = () => {
   };
 
   return (
-    <Container style={{ marginTop: '50px' }}>
+    <Container style={{ marginTop: "50px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Upload Syllabus
       </Typography>
 
       <Box display="flex" flexDirection="column" alignItems="center">
         {/* Dropdown for College Name */}
-        <FormControl fullWidth style={{ marginBottom: '20px' }}>
+        <FormControl fullWidth style={{ marginBottom: "20px" }}>
           <InputLabel>Select College</InputLabel>
           <Select
             value={collegeName}
@@ -112,7 +112,7 @@ const UploadSyllabus = () => {
 
         {/* Dropdown for Course Name */}
         {collegeName && (
-          <FormControl fullWidth style={{ marginBottom: '20px' }}>
+          <FormControl fullWidth style={{ marginBottom: "20px" }}>
             <InputLabel>Select Course</InputLabel>
             <Select
               value={courseName}
@@ -142,14 +142,22 @@ const UploadSyllabus = () => {
           type="file"
           accept=".pdf, image/*"
           onChange={handleFileChange}
-          style={{ marginBottom: '20px' }}
+          style={{ marginBottom: "20px" }}
         />
-        <Button variant="contained" style={{ backgroundColor: "#a65320" }} onClick={handleUpload}>
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#f30202" }}
+          onClick={handleUpload}
+        >
           Upload Syllabus
         </Button>
       </Box>
 
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
         <Alert onClose={handleSnackbarClose} severity="success">
           {snackbarMessage}
         </Alert>

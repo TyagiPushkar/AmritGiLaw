@@ -26,11 +26,16 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, []);
+const scrollToSection = () => {
+  window.scrollBy({
+    top: 500, // Scrolls down by 100px
+    behavior: "smooth",
+  });
+};
 
   return (
     <div
       className="hero container"
-     
       style={{ backgroundImage: `url(${images[currentImage]})` }}
     >
       <div className="notice">
@@ -55,7 +60,8 @@ const Hero = () => {
         </p>
         <button
           className="btn"
-          style={{ backgroundColor: "#a65320", color: "white" }}
+          style={{ backgroundColor: "#f30202", color: "white" }}
+          onClick={scrollToSection}
         >
           Explore more{" "}
           <img src={dark_arrow} alt="" style={{ color: "white" }} />

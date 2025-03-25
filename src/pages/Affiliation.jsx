@@ -69,150 +69,164 @@ const Affiliation = () => {
     const visibleImages = affiliationData[activeTab].affiliationImages.slice(activeIndex, activeIndex + imagesPerSlide);
 
     return (
-        <div style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}>
-            <h1>Affiliated Colleges</h1>
-            <Box sx={{ width: '100%', padding: 2 }}>
-                {/* Tabs for college selection */}
-                {isMobile ? (
-                    <Select
-                        value={activeTab}
-                        onChange={handleSelectChange}
-                        variant="outlined"
-                        fullWidth
-                        sx={{
-                            marginBottom: '16px',
-                            background: '#a65320',
-                            color: 'white',
-                            borderRadius: '10px',
-                        }}
-                    >
-                        {Object.keys(collegeLabels).map((college) => (
-                            <MenuItem key={college} value={college}>
-                                {collegeLabels[college]}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                ) : (
-                    <Tabs
-                        value={activeTab}
-                        onChange={handleTabChange}
-                        indicatorColor="transparent"
-                        textColor="inherit"
-                        centered
-                        sx={{
-                            width: '100%',
-                            background: '#a65320',
-                            borderRadius: '10px',
-                            padding: '8px 0',
-                            marginBottom: '16px',
-                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-                        }}
-                    >
-                        {Object.keys(affiliationData).map((college) => (
-                            <Tab
-                                key={college}
-                                label={college}
-                                value={college}
-                                sx={{
-                                    color: '#a65320',
-                                    fontWeight: 'bold',
-                                    textTransform: 'none',
-                                    borderRadius: '10px',
-                                    padding: '10px 24px',
-                                    margin: '0 16px',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                                    transition: 'background-color 0.3s, transform 0.3s',
-                                    '&:hover': {
-                                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                        transform: 'scale(1.05)',
-                                    },
-                                    '&.Mui-selected': {
-                                        backgroundColor: '#ffffff',
-                                        color: '#a65320',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-                                        transform: 'scale(1.1)',
-                                    },
-                                    margin: '0 150px', // Add margin here
-                                }}
-                            />
-                        ))}
-                    </Tabs>
-                )}
+      <div
+        style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}
+      >
+        <h1>Affiliated Colleges</h1>
+        <Box sx={{ width: "100%", padding: 2 }}>
+          {/* Tabs for college selection */}
+          {isMobile ? (
+            <Select
+              value={activeTab}
+              onChange={handleSelectChange}
+              variant="outlined"
+              fullWidth
+              sx={{
+                marginBottom: "16px",
+                background: "#f30202",
+                color: "white",
+                borderRadius: "10px",
+              }}
+            >
+              {Object.keys(collegeLabels).map((college) => (
+                <MenuItem key={college} value={college}>
+                  {collegeLabels[college]}
+                </MenuItem>
+              ))}
+            </Select>
+          ) : (
+            <Tabs
+              value={activeTab}
+              onChange={handleTabChange}
+              indicatorColor="transparent"
+              textColor="inherit"
+              centered
+              sx={{
+                width: "100%",
+                background: "#f30202",
+                borderRadius: "10px",
+                padding: "8px 0",
+                marginBottom: "16px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+              }}
+            >
+              {Object.keys(affiliationData).map((college) => (
+                <Tab
+                  key={college}
+                  label={college}
+                  value={college}
+                  sx={{
+                    color: "#f30202",
+                    fontWeight: "bold",
+                    textTransform: "none",
+                    borderRadius: "10px",
+                    padding: "10px 24px",
+                    margin: "0 16px",
+                    backgroundColor: "rgba(255, 255, 255, 0.7)",
+                    transition: "background-color 0.3s, transform 0.3s",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.3)",
+                      transform: "scale(1.05)",
+                    },
+                    "&.Mui-selected": {
+                      backgroundColor: "#ffffff",
+                      color: "#f30202",
+                      fontWeight: "bold",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                      transform: "scale(1.1)",
+                    },
+                    margin: "0 150px", // Add margin here
+                  }}
+                />
+              ))}
+            </Tabs>
+          )}
 
-                {/* Image Carousel Section */}
-                <Box sx={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-                    <Grid container spacing={2} justifyContent="center" alignItems="center">
-                        {visibleImages.map((image, index) => (
-                            <Grid item xs={6} sm={3} key={index}>
-                                <img
-                                    src={image}
-                                    alt={`${activeTab} Affiliation ${activeIndex + index + 1}`}
-                                    style={{
-                                        width: '100%',
-                                        borderRadius: '10px',
-                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                                        cursor: 'pointer',
-                                        transition: 'transform 0.3s ease-in-out',
-                                    }}
-                                    onClick={() => handleImageClick(image)}
-                                />
-                            </Grid>
-                        ))}
-                    </Grid>
+          {/* Image Carousel Section */}
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            <Grid
+              container
+              spacing={2}
+              justifyContent="center"
+              alignItems="center"
+            >
+              {visibleImages.map((image, index) => (
+                <Grid item xs={6} sm={3} key={index}>
+                  <img
+                    src={image}
+                    alt={`${activeTab} Affiliation ${activeIndex + index + 1}`}
+                    style={{
+                      width: "100%",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                      cursor: "pointer",
+                      transition: "transform 0.3s ease-in-out",
+                    }}
+                    onClick={() => handleImageClick(image)}
+                  />
+                </Grid>
+              ))}
+            </Grid>
 
-                    {/* Previous Button */}
-                    <IconButton
-                        onClick={handlePrev}
-                        sx={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: 0,
-                            transform: 'translateY(-50%)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            color: 'white',
-                            '&:hover': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                            },
-                        }}
-                    >
-                        <FaArrowLeft />
-                    </IconButton>
+            {/* Previous Button */}
+            <IconButton
+              onClick={handlePrev}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: 0,
+                transform: "translateY(-50%)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                },
+              }}
+            >
+              <FaArrowLeft />
+            </IconButton>
 
-                    {/* Next Button */}
-                    <IconButton
-                        onClick={handleNext}
-                        sx={{
-                            position: 'absolute',
-                            top: '50%',
-                            right: 0,
-                            transform: 'translateY(-50%)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            color: 'white',
-                            '&:hover': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                            },
-                        }}
-                    >
-                        <FaArrowRight />
-                    </IconButton>
-                </Box>
+            {/* Next Button */}
+            <IconButton
+              onClick={handleNext}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                right: 0,
+                transform: "translateY(-50%)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                },
+              }}
+            >
+              <FaArrowRight />
+            </IconButton>
+          </Box>
 
-                {/* Modal for large image view */}
-                <Dialog
-                    open={isModalOpen}
-                    onClose={handleCloseModal}
-                    maxWidth="md"
-                    fullWidth
-                >
-                    <img
-                        src={selectedImage}
-                        alt="Selected Affiliation"
-                        style={{ width: '100%', height: 'auto' }}
-                    />
-                </Dialog>
-            </Box>
-        </div>
+          {/* Modal for large image view */}
+          <Dialog
+            open={isModalOpen}
+            onClose={handleCloseModal}
+            maxWidth="md"
+            fullWidth
+          >
+            <img
+              src={selectedImage}
+              alt="Selected Affiliation"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Dialog>
+        </Box>
+      </div>
     );
 };
 

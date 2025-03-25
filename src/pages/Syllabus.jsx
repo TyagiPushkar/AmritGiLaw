@@ -55,103 +55,113 @@ const Syllabus = () => {
     const groupedSyllabus = groupSyllabusByCourse(syllabusData, activeTab);
 
     return (
-        <div style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}>
-            <h1>Course's Syllabus</h1>
-            <Box sx={{ width: '100%', padding: 2 }}>
-                {/* Tabs for college selection */}
-                {isMobile ? (
-                    // Dropdown for mobile screens
-                    <Select
-                        value={activeTab}
-                        onChange={handleSelectChange}
-                        variant="outlined"
-                        fullWidth
-                        sx={{
-                            marginBottom: '16px',
-                            background: '#a65320',
-                            color: 'white',
-                            borderRadius: '10px',
-                        }}
-                    >
-                        {Object.keys(syllabusData).map((college) => (
-                            <MenuItem key={college} value={college}>
-                                {college}
-                            </MenuItem>
+      <div
+        style={{ marginTop: "100px", minHeight: "500px", textAlign: "center" }}
+      >
+        <h1>Course's Syllabus</h1>
+        <Box sx={{ width: "100%", padding: 2 }}>
+          {/* Tabs for college selection */}
+          {isMobile ? (
+            // Dropdown for mobile screens
+            <Select
+              value={activeTab}
+              onChange={handleSelectChange}
+              variant="outlined"
+              fullWidth
+              sx={{
+                marginBottom: "16px",
+                background: "#f30202",
+                color: "white",
+                borderRadius: "10px",
+              }}
+            >
+              {Object.keys(syllabusData).map((college) => (
+                <MenuItem key={college} value={college}>
+                  {college}
+                </MenuItem>
+              ))}
+            </Select>
+          ) : (
+            <Tabs
+              value={activeTab}
+              onChange={handleTabChange}
+              indicatorColor="transparent"
+              textColor="inherit"
+              centered
+              sx={{
+                width: "100%",
+                background: "#f30202",
+                borderRadius: "10px",
+                padding: "8px 0",
+                marginBottom: "16px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+              }}
+            >
+              {Object.keys(syllabusData).map((college) => (
+                <Tab
+                  key={college}
+                  label={college}
+                  value={college}
+                  sx={{
+                    color: "#f30202",
+                    fontWeight: "bold",
+                    textTransform: "none",
+                    borderRadius: "10px",
+                    padding: "10px 24px",
+                    margin: "0 16px",
+                    backgroundColor: "rgba(255, 255, 255, 0.7)",
+                    transition: "background-color 0.3s, transform 0.3s",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.3)",
+                      transform: "scale(1.05)",
+                    },
+                    "&.Mui-selected": {
+                      backgroundColor: "#ffffff",
+                      color: "#f30202",
+                      fontWeight: "bold",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                      transform: "scale(1.1)",
+                    },
+                    margin: "0 120px",
+                  }}
+                />
+              ))}
+            </Tabs>
+          )}
+          {/* Course Cards */}
+          {Object.keys(groupedSyllabus).length > 0 && (
+            <Grid container spacing={2} justifyContent="center">
+              {Object.entries(groupedSyllabus).map(
+                ([courseName, semesters]) => (
+                  <Grid item xs={12} sm={6} md={4} lg={4} key={courseName}>
+                    <Card>
+                      <CardContent>
+                        <Typography variant="h6">{courseName}</Typography>
+                        {semesters.map((semester) => (
+                          <Button
+                            key={semester.file_url}
+                            variant="outlined"
+                            onClick={() =>
+                              handleSemesterSelect(semester.file_url)
+                            }
+                            style={{
+                              margin: "5px",
+                              color: "#f30202",
+                              border: "1px solid #f30202",
+                            }}
+                          >
+                            {semester.semester}
+                          </Button>
                         ))}
-                    </Select>
-                ) : (
-                    <Tabs
-                        value={activeTab}
-                        onChange={handleTabChange}
-                        indicatorColor="transparent"
-                        textColor="inherit"
-                        centered
-                        sx={{
-                            width: '100%',
-                            background: '#a65320',
-                            borderRadius: '10px',
-                            padding: '8px 0',
-                            marginBottom: '16px',
-                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-                        }}
-                    >
-                        {Object.keys(syllabusData).map((college) => (
-                            <Tab
-                                key={college}
-                                label={college}
-                                value={college}
-                                sx={{
-                                    color: '#a65320',
-                                    fontWeight: 'bold',
-                                    textTransform: 'none',
-                                    borderRadius: '10px',
-                                    padding: '10px 24px',
-                                    margin: '0 16px',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                                    transition: 'background-color 0.3s, transform 0.3s',
-                                    '&:hover': {
-                                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                        transform: 'scale(1.05)',
-                                    },
-                                    '&.Mui-selected': {
-                                        backgroundColor: '#ffffff',
-                                        color: '#a65320',
-                                        fontWeight: 'bold',
-                                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-                                        transform: 'scale(1.1)',
-                                    },
-                                    margin: '0 120px',
-                                }}
-                            />
-                        ))}
-                    </Tabs>
-                )}
-                {/* Course Cards */}
-                {Object.keys(groupedSyllabus).length > 0 && (
-                    <Grid container spacing={2} justifyContent="center">
-                        {Object.entries(groupedSyllabus).map(([courseName, semesters]) => (
-                            <Grid item xs={12} sm={6} md={4} lg={4} key={courseName}>
-                                <Card>
-                                    <CardContent>
-                                        <Typography variant="h6">{courseName}</Typography>
-                                        {semesters.map((semester) => (
-                                            <Button
-                                                key={semester.file_url}
-                                                variant="outlined"
-                                                onClick={() => handleSemesterSelect(semester.file_url)}
-                                                style={{ margin: '5px', color: "#a65320", border: "1px solid #a65320" }}
-                                            >
-                                                {semester.semester}
-                                            </Button>
-                                        ))}
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
-                )}
-            </Box>
-        </div>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                )
+              )}
+            </Grid>
+          )}
+        </Box>
+      </div>
     );
 };
 
