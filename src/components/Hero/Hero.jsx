@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import dark_arrow from "../../assets/white-arrow.png";
 import pdf from "../../assets/AMRIT LAW COLLEGE - ADMISSION FORM.pdf";
+import { useNavigate } from "react-router-dom";
 
 const images = [
   // require("../../assets/hero/1.png"),
@@ -18,7 +19,7 @@ const images = [
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
@@ -26,12 +27,9 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, []);
-const scrollToSection = () => {
-  window.scrollBy({
-    top: 500, // Scrolls down by 100px
-    behavior: "smooth",
-  });
-};
+  const scrollToSection = () => {
+    navigate("/events");
+  };
 
   return (
     <div

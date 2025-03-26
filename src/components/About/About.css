@@ -14,8 +14,9 @@
 }
 
 .about-image {
-    flex: 1;
-    max-width: 40%;
+    flex: 2;
+    max-width: 50%;
+    /* Increase width */
     position: relative;
     margin-right: 20px;
     margin-top: 40px;
@@ -23,6 +24,11 @@
 
 .about-img {
     width: 100%;
+    /* Fill container */
+    min-width: 580px;
+    /* Increase max size */
+    height: auto;
+    /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
@@ -76,8 +82,7 @@
     }
 
     .about-image {
-        max-width: 100%;
-        margin-right: 0;
+        margin-right: 100px;
         margin-bottom: 20px;
     }
 
@@ -85,4 +90,7 @@
         max-width: 100%;
         text-align: left;
     }
+        .about-img{
+            min-width: 300px;
+        }
 }

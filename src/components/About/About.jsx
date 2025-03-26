@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import about_img from "../../assets/about.jpeg";
+import about_img from "./image (1).png";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -27,13 +27,19 @@ const About = () => {
           </p>
           <ul>
             <li>
-              <Link to="/courses">ROORKEE DEGREE COLLEGE (Est. 2006)</Link>
+              <Link to="/courses" style={{ color: "#366D5A" }}>
+                ROORKEE DEGREE COLLEGE (Est. 2006)
+              </Link>
             </li>
             <li>
-              <Link to="/courses">AMRIT COLLEGE OF EDUCATION (Est. 2010)</Link>
+              <Link to="/courses" style={{ color: "#366D5A" }}>
+                AMRIT COLLEGE OF EDUCATION (Est. 2010)
+              </Link>
             </li>
             <li>
-              <Link to="/courses">AMRIT LAW COLLEGE (Est. 2012)</Link>
+              <Link to="/courses" style={{ color: "#366D5A" }}>
+                AMRIT LAW COLLEGE (Est. 2012)
+              </Link>
             </li>
           </ul>
         </div>

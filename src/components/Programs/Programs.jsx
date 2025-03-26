@@ -81,7 +81,7 @@ const collegeLabels = {
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
-            indicatorColor="transparent"
+            indicatorColor="transparet"
             textColor="inherit"
             centered
             sx={{
@@ -99,21 +99,21 @@ const collegeLabels = {
                 label={collegeLabels[college]}
                 value={college}
                 sx={{
-                  color: "#f30202",
+                  color: "#ffffff", // <-- Ensure inactive tabs have white text
                   fontWeight: "bold",
-                  textTransform: "none",
+                  // textTransform: "none",
                   borderRadius: "10px",
                   padding: "10px 24px",
                   margin: "0 16px",
-                  backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  backgroundColor: "rgba(255, 255, 255, 0.3)", // <-- Light background for inactive tabs
                   transition: "background-color 0.3s, transform 0.3s",
                   "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.3)",
+                    backgroundColor: "rgba(255, 255, 255, 0.5)",
                     transform: "scale(1.05)",
                   },
                   "&.Mui-selected": {
                     backgroundColor: "#ffffff",
-                    color: "#f30202",
+                    color: "#f30202", // <-- Active tab text color remains red
                     fontWeight: "bold",
                     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
                     transform: "scale(1.1)",
