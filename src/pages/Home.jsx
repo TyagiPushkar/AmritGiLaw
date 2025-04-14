@@ -30,7 +30,7 @@ const Home = () => {
                 <Contact />
 
             </div>
-            <VideoPlayer playState={playState} setPlayState={setPlayState} />
+            {/* <VideoPlayer playState={playState} setPlayState={setPlayState} /> */}
         </>
     )
 }

@@ -2,31 +2,37 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaFacebook,
+  FaTwitter,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-import Courses from './pages/Courses';
-import Gallery from './pages/Gallery';
-import Departments from './pages/Departments';
-import ContactUs from './pages/ContactUs';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import Examination from './pages/Examination';
-import Syllabus from './pages/Syllabus';
-import Result from './pages/Result';
-import Education from './components/Department/Education';
-import Affiliation from './pages/Affiliation';
-import ScrollToTop from './components/ScrollToTop';
-import AdminLogin from './pages/AdminLogin';
-import ProtectedRoute from './components/ProtectedRoute'; // Import Protected Route
-import AdminDashboard from './components/Admin/AdminDashboard';
-import { AuthProvider } from './components/AuthContext'; // Import AuthProvider
-import ISAC from './pages/ISAC';
-import CentralLib from './pages/CentralLib';
-import Law from './components/Department/Law';
-import EventGallery from './components/EventCard/EventGallery';
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Courses from "./pages/Courses";
+import Gallery from "./pages/Gallery";
+import Departments from "./pages/Departments";
+import ContactUs from "./pages/ContactUs";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import Examination from "./pages/Examination";
+import Syllabus from "./pages/Syllabus";
+import Result from "./pages/Result";
+import Education from "./components/Department/Education";
+import Affiliation from "./pages/Affiliation";
+import ScrollToTop from "./components/ScrollToTop";
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoute"; // Import Protected Route
+import AdminDashboard from "./components/Admin/AdminDashboard";
+import { AuthProvider } from "./components/AuthContext"; // Import AuthProvider
+import ISAC from "./pages/ISAC";
+import CentralLib from "./pages/CentralLib";
+import Law from "./components/Department/Law";
+import EventGallery from "./components/EventCard/EventGallery";
 
 const App = () => {
   const [playState, setPlayState] = useState(false);
@@ -78,9 +84,9 @@ const App = () => {
           <Footer />
           <VideoPlayer playState={playState} setPlayState={setPlayState} />
           <div className="floating-icons">
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+            {/* <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
               <FaLinkedin />
-            </a>
+            </a> */}
             <a
               href="https://www.facebook.com/amritgroupofinstitution"
               target="_blank"
@@ -88,11 +94,22 @@ const App = () => {
             >
               <FaFacebook />
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+            {/* <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
               <FaTwitter />
-            </a>
-            <a href="https://wa.me/+919910070444" target="_blank" rel="noreferrer">
+            </a> */}
+            <a
+              href="https://wa.me/+919910070444"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaWhatsapp />
+            </a>
+            <a
+              href="https://maps.app.goo.gl/znbLGQwxA5vkY9pi8?g_st=aw"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaMapMarkerAlt />
             </a>
           </div>
         </div>

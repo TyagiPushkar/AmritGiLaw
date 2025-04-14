@@ -1,4 +1,4 @@
-/* ===== Navbar Styling ===== */
+/* Base styles */
 nav {
     width: 100%;
     color: #fff;
@@ -12,6 +12,11 @@ nav {
     z-index: 10;
     background: #f30202;
     transition: background-color 0.5s;
+}
+
+nav.sticky,
+.dark-nav {
+    background: #f30202;
 }
 
 .logo {
@@ -30,14 +35,7 @@ nav ul {
 nav ul li {
     list-style: none;
     font-size: 16px;
-    margin: 0;
     position: relative;
-    /* To position dropdown relative to its parent */
-}
-
-nav.sticky,
-.dark-nav {
-    background: #f30202;
 }
 
 .menu-icon {
@@ -45,109 +43,69 @@ nav.sticky,
 }
 
 .contact-button {
-    background-color: yellow;
-    color: black;
+    background-color: #144C3A;
+    color: white;
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
 }
 
 .contact-button:hover {
-    background-color: rgb(231, 231, 43);
+    background-color: rgb(22, 103, 70);
 }
 
-/* ===== Dropdown Styling with Animation ===== */
-ul.dropdown {
-    display: block;
-    position: absolute;
-    top: 120%;
-    /* Position dropdown below the parent */
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-radius: 4px;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: all 0.4s ease-in-out;
-    /* Smooth fade and slide down */
+/* Dropdown menu */
+.has-dropdown {
+    position: relative;
 }
 
-ul.dropdown li {
-    padding: 8px 16px;
-    width: 200px;
-}
-
-ul.dropdown li a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-}
-
-/* ul.dropdown li a:hover {
-    background-color: #f1f1f1;
-} */
-
-/* Show dropdown with animation when hovering over the parent list item */
-li:hover>ul.dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    /* Slide down to original position */
-}
 .dropdown-toggle {
     background: none;
     border: none;
     color: white;
     font-size: 16px;
-    padding: 0px;
+    padding: 0;
     cursor: pointer;
     width: 100%;
     text-align: left;
 }
 
-.dropdown {
+.dropdown-menu {
     display: none;
-    background-color: #f30202;
-    padding-left: 20px;
-    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px;
+    padding: 10px 0;
 }
 
-.dropdown.active {
+.dropdown-menu li {
+    padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
     display: block;
 }
 
-.dropdown li {
-    margin: 5px 0;
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
 }
 
-.dropdown li a {
-    color: white;
-    padding: 5px;
-    display: block;
-}
-
-
-/* ===== Mobile Menu Styling ===== */
-@media (max-width: 1000px) {
-    .logo {
-        width: 70px;
+/* Show on hover for desktop */
+@media (min-width: 841px) {
+    .has-dropdown:hover .dropdown-menu {
+        display: block;
     }
-
-    nav ul li {
-        margin: 10px 15px;
-    }
-         .dropdown-toggle {
-             padding: 10px;
-             
-         }
-                 
 }
 
+/* Mobile styles */
 @media (max-width: 840px) {
     nav {
         padding: 15px 20px;
@@ -160,27 +118,20 @@ li:hover>ul.dropdown {
         bottom: 0;
         background: #f30202;
         z-index: 1000;
-        /* Ensure it's above other elements */
         width: 250px;
-        /* Adjust width as needed */
-        padding-top: 50px;
-        /* Space for the logo or header */
-        transition: transform 0.5s ease;
-        /* Smooth transition for the menu */
+        padding-top: 70px;
+        flex-direction: column;
         transform: translateX(100%);
-        /* Initially hide the menu off-screen */
+        transition: transform 0.5s ease;
     }
 
     nav ul.active {
         transform: translateX(0);
-        /* Slide in when active */
     }
 
     nav ul li {
-        display: block;
-        /* Ensure each menu item is block */
-        margin: 15px 0;
-        /* Add some margin for spacing */
+        margin: 1px 0 0 20px;
+        width: 100%;
     }
 
     .menu-icon {
@@ -190,75 +141,27 @@ li:hover>ul.dropdown {
         z-index: 2000;
     }
 
-    /* Mobile Menu Specific Styling */
-    .mobile-menu {
-        display: block;
-        /* Ensure menu is shown */
-    }
-
-    .mobile-menu .dropdown {
-        display: block;
-        background-color: #f30202;
-        /* Make dropdown visible */
-        padding-left: 20px;
-        /* Indent for dropdown items */
-        margin-top: 10px;
-        /* Space between parent and dropdown */
-    }
-
-    .mobile-menu .dropdown li {
-        margin: 5px 0;
-        /* Space between dropdown items */
-    }
-
-    .mobile-menu li a {
-        display: block;
-        /* Ensure the link fills the block */
-        padding: 10px;
-        /* Add padding for clickable area */
-        color: #fff;
-        /* Change text color */
-        text-decoration: none;
-    }
-
-    .mobile-menu li a:hover {
-        background-color: #ff6b6b;
-        /* Add hover effect */
-    }
-
-    .hide-mobile-menu {
-        transform: translateX(100%);
-        /* Hide menu off screen */
-        transition: transform 0.5s ease;
-        /* Smooth transition */
-    }
-        ul.dropdown li a:hover {
-            background-color: #f1f1f1;
-        }
-                ul.dropdown {
-                    display: block;
-                    position: absolute;
-                    top: 120%;
-                    /* Position dropdown below the parent */
-                    left: 0;
-                    background-color: #fff;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
-                    border-radius: 4px;
-                    z-index: 999;
-                    opacity: 0;
-                    visibility: hidden;
-                    transform: translateY(-20px);
-                    transition: all 0.4s ease-in-out;
-                    /* Smooth fade and slide down */
-                }
-                               
-}
-/* Add this CSS for the dropdown functionality */
-@media (max-width: 600px) {
-.dropdown.active li {
+    .dropdown-menu {
+        position: static;
         background-color: white;
+        color: black;
+        width: 100%;
+    }
+
+    .dropdown-menu li a {
+        color: black;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #ff6b6b;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+    }
+
+    .contact-button {
+        background-color: #144C3A;
+        color: white;
     }
 }

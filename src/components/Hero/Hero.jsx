@@ -9,7 +9,7 @@ const images = [
   require("../../assets/hero/2.jpeg"),
   // require("../../assets/hero/3.jpeg"),
   require("../../assets/hero/4.jpeg"),
-  require("../../assets/hero/5.jpeg"),
+  // require("../../assets/hero/5.jpeg"),
   require("../../assets/hero/6.jpeg"),
   require("../../assets/hero/7.jpeg"),
   // require("../../assets/hero/8.jpeg"),
@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="notice">
         <div className="notice-content">
           <p>
-            Admissions Open for batch 2025-2026. Fill admission form
+            Admissions Open for batch 2025-2026. Fill admission form &nbsp;
             <a
               href={pdf}
               target="_blank"
@@ -52,10 +52,10 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-text">
-        <h1>Believes in the all-round development of its students</h1>
+        {/* <h1>Believes in the all-round development of its students</h1>
         <p style={{ textAlign: "center" }}>
           and therefore leaves no stone unturned to ensure this.
-        </p>
+        </p> */}
         <button
           className="btn"
           style={{ backgroundColor: "#f30202", color: "white" }}

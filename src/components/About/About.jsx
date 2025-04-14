@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import about_img from "./image (1).png";
+import about_img2 from "../../assets/CollegeBuilding.png";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -8,9 +9,15 @@ const About = () => {
     <div className="about">
       <div className="about-container">
         <div className="about-image">
-          <img src={about_img} alt="About" className="about-img" />
+          <img src={about_img} alt="About" className="about-img desktop-img" />
+          <img
+            src={about_img2}
+            alt="About Mobile"
+            className="about-img mobile-img"
+          />
           <br />
         </div>
+
         <div className="about-text">
           <h3>ABOUT AMRIT GROUP OF INSTITUTIONS</h3>
           <p>

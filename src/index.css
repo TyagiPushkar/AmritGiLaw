@@ -107,15 +107,6 @@ p{
     background-color: #005582;
  }
 
- .floating-icons a:nth-child(2) {
-    background-color: #3b5998;
-    /* Facebook */
- }
-
- .floating-icons a:nth-child(2):hover {
-    background-color: #2d4373;
- }
-
  .floating-icons a:nth-child(3) {
     background-color: #1da1f2;
     /* Twitter */
@@ -125,11 +116,11 @@ p{
  .floating-icons a:nth-child(3):hover {
     background-color: #0d95e8;
  }
-.floating-icons a:nth-child(4) {
+.floating-icons a:nth-child(2) {
    background-color: #256803;
    /* Twitter */
 }
- .floating-icons a:nth-child(4):hover {
+ .floating-icons a:nth-child(2):hover {
     background-color: #4f962b;
  }
  .floating-icons a svg {

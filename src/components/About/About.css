@@ -14,9 +14,8 @@
 }
 
 .about-image {
-    flex: 2;
+    flex: 1;
     max-width: 50%;
-    /* Increase width */
     position: relative;
     margin-right: 20px;
     margin-top: 40px;
@@ -24,17 +23,14 @@
 
 .about-img {
     width: 100%;
-    /* Fill container */
-    min-width: 580px;
-    /* Increase max size */
+    max-width: 100%;
     height: auto;
-    /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
 .about-text {
     flex: 1;
-    max-width: 55%;
+    max-width: 50%;
 }
 
 .about-text h3 {
@@ -49,11 +45,13 @@
     margin-bottom: 10px;
     line-height: 1.6;
 }
-.pp{
+
+.pp {
     color: #676767;
-        margin-bottom: 10px;
-        line-height: 1.6;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
+
 .about-text ul {
     list-style: none;
     padding: 0;
@@ -74,23 +72,53 @@
     text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
+/* Responsive for tablets and laptops */
+@media (max-width: 1024px) {
     .about-container {
         flex-direction: column;
         align-items: center;
     }
 
     .about-image {
-        margin-right: 100px;
-        margin-bottom: 20px;
+        max-width: 100%;
+        margin: 0 auto 20px;
     }
 
     .about-text {
         max-width: 100%;
         text-align: left;
     }
-        .about-img{
-            min-width: 300px;
-        }
+}
+
+/* Mobile-specific */
+@media (max-width: 600px) {
+    .about-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .about-text h3 {
+        font-size: 18px;
+    }
+}
+
+/* Hide mobile image by default, show on small screens */
+.mobile-img {
+    display: block;
+}
+
+.desktop-img {
+    display: none;
+}
+
+/* On screens smaller than 768px, switch images */
+@media screen and (max-width: 768px) {
+    .mobile-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: block;
+    }
 }

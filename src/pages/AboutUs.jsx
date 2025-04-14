@@ -35,7 +35,7 @@ const slider = useRef();
       <>
         <div
           className="container"
-          style={{ marginTop: isMobile ? "80px" : "80px" }}
+          style={{ marginTop: isMobile ? "100px" : "100px" }}
         >
           <About setPlayState={setPlayState} />
           <div>
@@ -153,7 +153,7 @@ const slider = useRef();
             <br />
           </div>
         </div>
-        <VideoPlayer playState={playState} setPlayState={setPlayState} />
+        {/* <VideoPlayer playState={playState} setPlayState={setPlayState} /> */}
       </>
     );
 }
