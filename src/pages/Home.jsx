@@ -4,19 +4,15 @@ import Title from '../components/Title/Title'
 import Programs from '../components/Programs/Programs'
 import About from '../components/About/About'
 import Campus from '../components/Campus/Campus'
-import Testimonials from '../components/Testimonials/Testimonials'
 import Contact from '../components/Contact/Contact'
-import VideoPlayer from '../components/VideoPlayer/VideoPlayer'
 import Addmission from '../components/Addmission/Addmission'
 
 const Home = () => {
     const [playState, setPlayState] = useState(false);
-
-
     return (
         <>
             <Hero />
-            <div className="container">
+            <div>
                 <About setPlayState={setPlayState} />
                 <Title subTitle='OUR Courses' title='What We Offer' />
                 <Programs />

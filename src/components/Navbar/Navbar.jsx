@@ -207,7 +207,6 @@ const Navbar = () => {
             </li>
           </ul>
         </li>
-
         <li>
           <Link to="/events" onClick={closeMenu}>
             Events
