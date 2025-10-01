@@ -9,12 +9,12 @@ const images = [
   require("../../assets/hero/2.jpeg"),
   // require("../../assets/hero/3.jpeg"),
   require("../../assets/hero/4.jpeg"),
-  // require("../../assets/hero/5.jpeg"),
   require("../../assets/hero/6.jpeg"),
   require("../../assets/hero/7.jpeg"),
-  // require("../../assets/hero/8.jpeg"),
   require("../../assets/hero/9.jpeg"),
-  // require("../../assets/hero/10.jpeg"),
+  // require("../../assets/hero/11.jpeg"),
+  // require("../../assets/hero/12.jpeg"),
+  require("../../assets/hero/12.JPG"),
 ];
 
 const Hero = () => {
